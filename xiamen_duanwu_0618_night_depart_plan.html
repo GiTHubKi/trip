@@ -1,0 +1,1521 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深圳出发｜2026 端午厦门 6 月 18 日晚出发版</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17212b;
+      --muted: #66717d;
+      --line: #dfe5e8;
+      --paper: #fbfaf7;
+      --surface: #ffffff;
+      --teal: #0e6f70;
+      --teal-deep: #095456;
+      --coral: #d75f4b;
+      --gold: #b9822d;
+      --green: #557c55;
+      --blue: #376ea3;
+      --shadow: 0 18px 44px rgba(23, 33, 43, 0.12);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 68vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(7, 18, 28, 0.14), rgba(7, 18, 28, 0.72)),
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Xiamen_night_Skyline_from_Gulangyu.JPG/1280px-Xiamen_night_Skyline_from_Gulangyu.JPG") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34%;
+      background: linear-gradient(180deg, rgba(251, 250, 247, 0), var(--paper));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 96px 0 82px;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 12px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      backdrop-filter: blur(12px);
+      font-size: 14px;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 22px 0 16px;
+      font-size: clamp(40px, 6vw, 74px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      font-weight: 800;
+      overflow-wrap: normal;
+    }
+
+    .hero-title-tail::before {
+      content: "·";
+      display: inline-block;
+      margin: 0 0.22em;
+    }
+
+    .hero-copy {
+      max-width: min(720px, 100%);
+      margin: 0;
+      font-size: clamp(17px, 2.2vw, 23px);
+      color: rgba(255, 255, 255, 0.88);
+      overflow-wrap: anywhere;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .page-nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: thin;
+    }
+
+    .nav-inner a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+
+    .nav-inner a:hover {
+      color: var(--teal-deep);
+      background: #e8f1ee;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 76px;
+    }
+
+    section {
+      scroll-margin-top: 76px;
+      margin-top: 52px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      max-width: 540px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: -22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat {
+      min-height: 132px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+      color: var(--teal-deep);
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .route-panel,
+    .note-panel,
+    .budget-panel,
+    .source-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(23, 33, 43, 0.08);
+    }
+
+    .route-panel {
+      padding: 22px;
+    }
+
+    .route-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .route-list li {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid #e7ecee;
+      border-radius: var(--radius);
+      background: #fbfdfc;
+    }
+
+    .day {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      color: var(--teal-deep);
+      font-weight: 800;
+    }
+
+    .day small {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .route-list h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .route-list p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .photo-card {
+      min-height: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.42)),
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Fishing_boats_in_Shapowei%2C_Xiamen.jpg/1280px-Fishing_boats_in_Shapowei%2C_Xiamen.jpg") center / cover no-repeat;
+      box-shadow: 0 12px 28px rgba(23, 33, 43, 0.1);
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      color: #fff;
+    }
+
+    .photo-card p {
+      margin: 0;
+      max-width: 360px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 15px;
+    }
+
+    .photo-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      min-height: 198px;
+      box-shadow: 0 10px 26px rgba(23, 33, 43, 0.07);
+    }
+
+    .card .tag {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 12px;
+      color: #fff;
+      background: var(--teal);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 13px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    .price-strip {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 12px;
+      border: 1px solid #f0d5c6;
+      background: #fff6f1;
+      color: #9d4938;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 10px 26px rgba(23, 33, 43, 0.07);
+    }
+
+    .timebox {
+      border-right: 2px solid #e8eded;
+      padding-right: 18px;
+    }
+
+    .timebox strong {
+      display: block;
+      color: var(--coral);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .timebox span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .timeline-item p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .path {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .path span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eef4f1;
+      color: var(--teal-deep);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .budget-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .budget-inline span {
+      border: 1px solid #f0d5c6;
+      background: #fff6f1;
+      color: #9d4938;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .budget-inline .soft {
+      border-color: #d8e7e2;
+      background: #f0f7f4;
+      color: var(--teal-deep);
+    }
+
+    .day-plans {
+      display: grid;
+      gap: 18px;
+    }
+
+    .day-plan {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 26px rgba(23, 33, 43, 0.07);
+      overflow: hidden;
+    }
+
+    .day-plan-head {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfdfc;
+    }
+
+    .day-plan-date strong {
+      display: block;
+      color: var(--coral);
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .day-plan-date span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .day-plan-title h3 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    .day-plan-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .slot-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .slot {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid #edf1f2;
+    }
+
+    .slot:last-child {
+      border-bottom: 0;
+    }
+
+    .slot-time {
+      color: var(--teal-deep);
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .slot-body h4 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .slot-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .slot-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .slot-meta span {
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 13px;
+      color: var(--teal-deep);
+      background: #eef4f1;
+      border: 1px solid #d8e7e2;
+    }
+
+    .slot-meta .meal {
+      color: #9d4938;
+      background: #fff6f1;
+      border-color: #f0d5c6;
+    }
+
+    .slot-meta .stay {
+      color: #315e91;
+      background: #edf5ff;
+      border-color: #d5e5f8;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .note-panel {
+      padding: 22px;
+    }
+
+    .note-panel h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .note-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .note-list li + li {
+      margin-top: 8px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .meal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .food {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-height: 124px;
+    }
+
+    .food strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal-deep);
+      font-size: 18px;
+    }
+
+    .food span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .food em {
+      display: inline-block;
+      margin-top: 10px;
+      font-style: normal;
+      color: var(--coral);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .subhead {
+      margin: 26px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(23, 33, 43, 0.07);
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 15px;
+    }
+
+    th {
+      background: #edf4f1;
+      color: var(--teal-deep);
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .money {
+      font-weight: 800;
+      color: var(--coral);
+      white-space: nowrap;
+    }
+
+    .warning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .warning {
+      border-left: 5px solid var(--coral);
+    }
+
+    .warning:nth-child(2) {
+      border-left-color: var(--gold);
+    }
+
+    .warning:nth-child(3) {
+      border-left-color: var(--blue);
+    }
+
+    .warning:nth-child(4) {
+      border-left-color: var(--green);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .checklist .note-panel {
+      min-height: 236px;
+    }
+
+    .source-panel {
+      padding: 22px;
+    }
+
+    .source-panel p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .source-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .source-panel li + li {
+      margin-top: 6px;
+    }
+
+    .credit {
+      margin-top: 22px;
+      color: #7b858d;
+      font-size: 12px;
+    }
+
+    @media (max-width: 920px) {
+      .quick-grid,
+      .cards,
+      .food-grid,
+      .meal-grid,
+      .checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .route,
+      .two-col,
+      .warning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .day-plan-head,
+      .slot {
+        grid-template-columns: 120px 1fr;
+      }
+
+      .photo-card {
+        min-height: 330px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 72vh;
+      }
+
+      .hero-inner,
+      main,
+      .nav-inner {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero-inner {
+        padding: 88px 0 64px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 11vw, 46px);
+        max-width: 100%;
+      }
+
+      h1 span {
+        display: block;
+      }
+
+      .hero-copy {
+        max-width: 330px;
+        font-size: 16px;
+        line-height: 1.6;
+        word-break: break-all;
+      }
+
+      .hero-title-tail::before {
+        content: "";
+        display: none;
+      }
+
+      .quick-grid,
+      .cards,
+      .food-grid,
+      .meal-grid,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 8px;
+      }
+
+      .route-list li,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .day-plan-head,
+      .slot {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .timebox {
+        border-right: 0;
+        border-bottom: 2px solid #e8eded;
+        padding: 0 0 12px;
+      }
+
+      th,
+      td {
+        padding: 12px 10px;
+        font-size: 14px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .hero {
+        min-height: auto;
+        background: #123;
+      }
+
+      .hero-inner {
+        padding: 40px 0;
+      }
+
+      .page-nav {
+        display: none;
+      }
+
+      .stat,
+      .route-panel,
+      .note-panel,
+      .budget-panel,
+      .source-panel,
+      .card,
+      .timeline-item,
+      table {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">深圳出发 · 2026 端午 · 6 月 18 日晚先到厦门</div>
+      <h1><span>厦门端午</span><span class="hero-title-tail">3 晚慢游计划</span></h1>
+      <p class="hero-copy">18 日晚抵达，19-21 日完整玩 3 天。路线把鼓浪屿、植物园、沙坡尾、中山路和集美拆开安排，少赶路，避开端午高峰里最容易踩坑的部分。</p>
+      <div class="hero-meta">
+        <span>6/18 晚出发</span>
+        <span>3 晚住宿</span>
+        <span>鼓浪屿早进早出</span>
+        <span>预算约 2200-4800 元/人</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="页面导航">
+    <div class="nav-inner">
+      <a href="#overview">概览</a>
+      <a href="#dates">订票节点</a>
+      <a href="#route">每日路线</a>
+      <a href="#stay">住宿</a>
+      <a href="#food">美食</a>
+      <a href="#gifts">特产文创</a>
+      <a href="#warnings">避雷</a>
+      <a href="#checklist">临行检查</a>
+      <a href="#sources">来源</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <div class="quick-grid">
+        <article class="stat">
+          <strong>D0</strong>
+          <span>6 月 18 日晚深圳北出发，到厦门后只入住休息。</span>
+        </article>
+        <article class="stat">
+          <strong>3 天</strong>
+          <span>19-21 日完整游玩，节奏比 19 日早上出发更从容。</span>
+        </article>
+        <article class="stat">
+          <strong>3 晚</strong>
+          <span>优先三晚都住岛内同一家酒店，减少换房和行李成本。</span>
+        </article>
+        <article class="stat">
+          <strong>轻量</strong>
+          <span>不塞土楼、不硬凑帆船，把天气和人流风险留出余地。</span>
+        </article>
+      </div>
+
+      <div class="section-head">
+        <h2>行程主线</h2>
+        <p class="section-note">这版的核心是“先到、早玩、早进鼓浪屿、返程日不跑远”。端午人多，行程越明确越不容易被排队打乱。</p>
+      </div>
+
+      <div class="route">
+        <article class="route-panel">
+          <ul class="route-list">
+            <li>
+              <div class="day">D0<small>6/18 周四</small></div>
+              <div>
+                <h3>深圳北 -> 厦门北 -> 酒店</h3>
+                <p>建议 18:00-20:30 出发。到厦门后不安排景点，直接入住休息。</p>
+              </div>
+            </li>
+            <li>
+              <div class="day">D1<small>6/19 周五</small></div>
+              <div>
+                <h3>植物园/钟鼓索道 -> 南普陀 -> 沙坡尾/中山路</h3>
+                <p>早上走户外，午后休息，晚上去沙坡尾和中山路逛吃。</p>
+              </div>
+            </li>
+            <li>
+              <div class="day">D2<small>6/20 周六</small></div>
+              <div>
+                <h3>鼓浪屿早进早出 -> 黄厝沙滩/环岛路/曾厝垵短逛</h3>
+                <p>把鼓浪屿放在第二天，体力和船票安排都更稳；曾厝垵适合作为傍晚 1-1.5 小时短停。</p>
+              </div>
+            </li>
+            <li>
+              <div class="day">D3<small>6/21 周日</small></div>
+              <div>
+                <h3>集美学村或市区补漏 -> 返深</h3>
+                <p>返程日不跑远，优先顺厦门北方向安排。</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <aside class="photo-card">
+          <div>
+            <strong>沙坡尾适合放在傍晚</strong>
+            <p>比中午更舒服，遇到阵雨也有咖啡、甜品和小店可躲。晚餐再回中山路或镇邦路更顺。</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="dates">
+      <div class="section-head">
+        <h2>订票节点</h2>
+        <p class="section-note">按 12306 15 天预售期和厦门轮渡 15 天内船票规则推算，具体开售时间以官方页面为准。</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>建议时间</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>去程火车票</td>
+            <td>预计 2026-06-04 开售</td>
+            <td>6 月 18 日晚深圳北到厦门北，建议开售当天看票。</td>
+          </tr>
+          <tr>
+            <td>返程火车票</td>
+            <td>预计 2026-06-07 开售</td>
+            <td>6 月 21 日端午返程，建议抢 16:00-19:00 厦门北回深圳北。</td>
+          </tr>
+          <tr>
+            <td>鼓浪屿船票</td>
+            <td>建议 2026-06-06 起关注</td>
+            <td>若 6 月 20 日上岛，优先买早班，带身份证原件。</td>
+          </tr>
+          <tr>
+            <td>天气复核</td>
+            <td>2026-06-15 以后</td>
+            <td>临近再判断 D1 是否保留植物园，明显下雨就换集美或市区轻松线。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="route">
+      <div class="section-head">
+        <h2>每日路线</h2>
+        <p class="section-note">按实际出行节奏拆到小时级，包含交通、景点、用餐、午休、住宿和费用提醒；临近出发可按天气微调。</p>
+      </div>
+
+      <div class="day-plans">
+        <article class="day-plan">
+          <div class="day-plan-head">
+            <div class="day-plan-date">
+              <strong>D0</strong>
+              <span>6 月 18 日 周四晚</span>
+            </div>
+            <div class="day-plan-title">
+              <h3>下班后出发，只做入住和休整</h3>
+              <p>这晚的目标是顺利到店，不把第一天体力提前消耗掉。建议三晚都住同一家岛内酒店。</p>
+            </div>
+          </div>
+          <ul class="slot-list">
+            <li class="slot">
+              <div class="slot-time">17:30-18:30</div>
+              <div class="slot-body">
+                <h4>深圳北集合 / 简单晚餐</h4>
+                <p>下班后直接去深圳北。站内或附近吃轻量晚餐，避免到厦门后还要找正餐。</p>
+                <div class="slot-meta"><span>深圳北</span><span class="meal">晚餐约 30-60 元</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">18:00-20:30</div>
+              <div class="slot-body">
+                <h4>深圳北 -> 厦门北</h4>
+                <p>优先选 18:00-20:30 之间出发的动车/高铁。具体耗时和价格以 12306 实时车次为准。</p>
+                <div class="slot-meta"><span>高铁约 180-450 元/人</span><span>到达约 22:00-00:00</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">22:00-00:40</div>
+              <div class="slot-body">
+                <h4>厦门北 -> 酒店入住</h4>
+                <p>22:30 前到达可地铁/打车二选一；23:00 后更建议打车进岛。酒店需提前确认支持深夜入住。</p>
+                <div class="slot-meta"><span>进岛交通约 8-120 元/人</span><span class="stay">住中山路/镇海路/中华城附近</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">00:00 前后</div>
+              <div class="slot-body">
+                <h4>便利店补给 / 休息</h4>
+                <p>买水、早餐垫肚食品、雨具或驱蚊用品。不要再去景区夜游。</p>
+                <div class="slot-meta"><span class="meal">补给约 20-60 元</span><span class="stay">当晚住宿 1/3</span></div>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="day-plan">
+          <div class="day-plan-head">
+            <div class="day-plan-date">
+              <strong>D1</strong>
+              <span>6 月 19 日 周五</span>
+            </div>
+            <div class="day-plan-title">
+              <h3>植物园、南普陀、沙坡尾和中山路</h3>
+              <p>上午户外，午后回酒店休息，傍晚再出门。6 月厦门湿热，这一天不要连续暴走。</p>
+            </div>
+          </div>
+          <ul class="slot-list">
+            <li class="slot">
+              <div class="slot-time">08:00-08:45</div>
+              <div class="slot-body">
+                <h4>酒店附近早餐</h4>
+                <p>优先吃沙茶面、花生汤、闽南肠粉这类顺路早餐，不要排长队。</p>
+                <div class="slot-meta"><span class="meal">早餐约 25-60 元</span><span>从酒店轻装出发</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">09:00-11:30</div>
+              <div class="slot-body">
+                <h4>厦门园林植物园 / 钟鼓索道二选一或串联</h4>
+                <p>天气好就早进植物园，重点看沙生植物区和雨林世界；想看城市视角再加钟鼓索道。下雨明显时改集美或市区咖啡路线。</p>
+                <div class="slot-meta"><span>门票/索道约 30-120 元</span><span>打车/地铁约 20-60 元</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">11:45-13:00</div>
+              <div class="slot-body">
+                <h4>南普陀 / 厦大外观 / 简单午餐</h4>
+                <p>南普陀控制在 1 小时左右，不做深度爬山。午餐以鱼丸、汤包、简餐为主，给下午留体力。</p>
+                <div class="slot-meta"><span class="meal">午餐约 50-90 元</span><span>南普陀 -> 酒店</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">13:30-15:30</div>
+              <div class="slot-body">
+                <h4>回酒店午休</h4>
+                <p>这是这版行程的关键缓冲。洗澡、换衣、充电，避开最热时段。</p>
+                <div class="slot-meta"><span class="stay">同一酒店休息</span><span>减少下午体力透支</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">16:00-18:30</div>
+              <div class="slot-body">
+                <h4>沙坡尾 / 演武大桥 / 双子塔外观</h4>
+                <p>沙坡尾适合傍晚去，咖啡甜品、小店、海边散步都有。遇到阵雨也好找室内店躲。</p>
+                <div class="slot-meta"><span>交通约 20-60 元</span><span class="meal">咖啡/甜品约 30-80 元</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">19:00-21:30</div>
+              <div class="slot-body">
+                <h4>中山路 / 镇邦路 / 水仙路逛吃</h4>
+                <p>按小吃路线吃：沙茶面、姜母鸭、鱼丸、五香、满煎糕、花生汤。少量多家，不建议这晚在八市临街海鲜店吃重餐。</p>
+                <div class="slot-meta"><span class="meal">晚餐约 90-180 元</span><span class="stay">回同一酒店住宿 2/3</span></div>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="day-plan">
+          <div class="day-plan-head">
+            <div class="day-plan-date">
+              <strong>D2</strong>
+              <span>6 月 20 日 周六</span>
+            </div>
+            <div class="day-plan-title">
+              <h3>鼓浪屿早进早出，傍晚三选一</h3>
+              <p>今天人流压力最大。核心是早去鼓浪屿、下午休息，傍晚在黄厝、环岛路、曾厝垵里选一个。</p>
+            </div>
+          </div>
+          <ul class="slot-list">
+            <li class="slot">
+              <div class="slot-time">07:00-07:40</div>
+              <div class="slot-body">
+                <h4>早餐 / 出发去码头</h4>
+                <p>酒店早餐、便利店或简单汤粉即可。带身份证原件、雨伞、防晒和水。</p>
+                <div class="slot-meta"><span class="meal">早餐约 20-50 元</span><span>提前到码头</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">08:00-13:30</div>
+              <div class="slot-body">
+                <h4>鼓浪屿：三丘田码头 -> 最美转角 -> 万国建筑群 -> 龙头路</h4>
+                <p>早班船上岛，控制在半天内。菽庄花园和港仔后沙滩二选一，不拖箱、不在岛上吃拉客海鲜大餐。</p>
+                <div class="slot-meta"><span>船票以官方实时票价为准</span><span class="meal">岛上轻食约 60-140 元</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">14:00-16:00</div>
+              <div class="slot-body">
+                <h4>返程下岛 / 回酒店休息</h4>
+                <p>节假日下岛和打车都可能排队，别把下午安排得太紧。回酒店休息后再出门。</p>
+                <div class="slot-meta"><span>市内交通约 30-80 元</span><span class="stay">同一酒店休息</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">16:30-18:30</div>
+              <div class="slot-body">
+                <h4>傍晚三选一：黄厝沙滩 / 环岛路 / 曾厝垵</h4>
+                <p>想看海选黄厝；想散步骑行选环岛路；想补小吃和商业街体验选曾厝垵，控制 1-1.5 小时即可。</p>
+                <div class="slot-meta"><span>短途交通约 20-80 元</span><span>曾厝垵只短逛不住宿</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">19:00-21:00</div>
+              <div class="slot-body">
+                <h4>晚餐：姜母鸭 / 厦门菜 / 稳妥海鲜</h4>
+                <p>想吃海鲜就今晚吃，但只选菜单清楚、加工费和餐具费说清楚的店。看不懂规则就换厦门菜或姜母鸭。</p>
+                <div class="slot-meta"><span class="meal">晚餐约 100-260 元</span><span class="stay">回同一酒店住宿 3/3</span></div>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="day-plan">
+          <div class="day-plan-head">
+            <div class="day-plan-date">
+              <strong>D3</strong>
+              <span>6 月 21 日 周日</span>
+            </div>
+            <div class="day-plan-title">
+              <h3>返程日不跑远，集美或市区补漏</h3>
+              <p>今天的原则是顺路、轻量、不误车。返程高峰要给厦门北留足时间。</p>
+            </div>
+          </div>
+          <ul class="slot-list">
+            <li class="slot">
+              <div class="slot-time">08:30-09:30</div>
+              <div class="slot-body">
+                <h4>早餐 / 收拾行李 / 退房</h4>
+                <p>能寄存就寄存；若去集美，建议直接带行李或先去厦门北寄存，避免回头路。</p>
+                <div class="slot-meta"><span class="meal">早餐约 20-50 元</span><span class="stay">退房</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">10:00-12:00</div>
+              <div class="slot-body">
+                <h4>方案 A：集美学村 / 龙舟池 / 嘉庚建筑群</h4>
+                <p>更推荐的返程日路线，方向顺厦门北。天气热就少走路，多拍外观和湖边。</p>
+                <div class="slot-meta"><span>交通约 20-80 元</span><span>适合返程日</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">10:00-12:00</div>
+              <div class="slot-body">
+                <h4>方案 B：中山路/八市外围补吃 + 咖啡休息</h4>
+                <p>如果不想拖行李跑远，就在酒店附近补吃一两家，不再安排鼓浪屿、植物园或远海边。</p>
+                <div class="slot-meta"><span class="meal">补吃/咖啡约 60-160 元</span><span>低风险路线</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">12:00-13:20</div>
+              <div class="slot-body">
+                <h4>午餐 / 伴手礼和文创补买</h4>
+                <p>返程前集中买最省力。食品伴手礼选密封盒装，文创选冰箱贴、明信片、盖章本、小摆件这类轻便款；重的、易碎的和需要冷藏的不要买太多。</p>
+                <div class="slot-meta"><span class="meal">午餐约 40-90 元</span><span>伴手礼/文创约 80-300 元/人</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">13:30-15:00</div>
+              <div class="slot-body">
+                <h4>前往厦门北</h4>
+                <p>无论选哪个方案，都建议至少提前 2 小时往厦门北移动。端午返程不要压线。</p>
+                <div class="slot-meta"><span>交通约 30-120 元</span><span>预留进站时间</span></div>
+              </div>
+            </li>
+            <li class="slot">
+              <div class="slot-time">16:00-19:00</div>
+              <div class="slot-body">
+                <h4>厦门北 -> 深圳北</h4>
+                <p>建议选择下午到傍晚的返程车。到深圳后不再安排衔接活动。</p>
+                <div class="slot-meta"><span>高铁约 180-450 元/人</span><span class="meal">车上/站内简餐约 30-70 元</span></div>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="stay">
+      <div class="section-head">
+        <h2>住宿选择</h2>
+        <p class="section-note">18 日晚到达时，住宿位置比景观更重要。三晚不换酒店，整体效率最高。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">首选</span>
+          <h3>中山路 / 镇海路 / 中华城</h3>
+          <div class="price-strip">3 晚双人均摊约 900-1800 元/人</div>
+          <p>去植物园、南普陀、沙坡尾、码头都方便，晚上吃饭选择多。端午建议优先选连锁酒店或评分稳定的精品酒店，贵一点但能省掉换房和打车成本。</p>
+        </article>
+        <article class="card">
+          <span class="tag">次选</span>
+          <h3>文灶 / 莲坂 / 筼筜湖</h3>
+          <div class="price-strip">3 晚双人均摊约 750-1500 元/人</div>
+          <p>酒店品质和安静度通常更稳，适合愿意多打几次车、想住舒服一点的人。若中山路端午溢价明显，这几个区域通常更容易找到干净安静的房。</p>
+        </article>
+        <article class="card">
+          <span class="tag">谨慎</span>
+          <h3>曾厝垵深处民宿</h3>
+          <div class="price-strip">低价房也要看隔音和位置成本</div>
+          <p>近期小红书避雷集中提到道路窄、导航不稳、隔音差。曾厝垵可以放在 D2 傍晚短逛 1-1.5 小时，但不建议作为端午 3 晚住宿核心；低价民宿省下的钱，可能会被打车、找路和睡眠质量抵消。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="food">
+      <div class="section-head">
+        <h2>美食安排</h2>
+        <p class="section-note">把餐饮预算放到每天的吃法里看更直观：小吃路线控制在 450-800 元/人，想吃好一点或加海鲜正餐按 800-1300 元/人准备。</p>
+      </div>
+
+      <h3 class="subhead">按天吃法和费用</h3>
+      <div class="meal-grid">
+        <article class="food">
+          <strong>D0 到达夜</strong>
+          <span>不要夜里再去景区觅食。酒店附近便利店、汤粉、小面或简餐即可，留体力给 D1。</span>
+          <em>约 20-60 元/人</em>
+        </article>
+        <article class="food">
+          <strong>D1 中山路逛吃</strong>
+          <span>早餐沙茶面，下午沙坡尾咖啡/甜品，晚上中山路、镇邦路、水仙路小吃串联。</span>
+          <em>约 160-320 元/人</em>
+        </article>
+        <article class="food">
+          <strong>D2 鼓浪屿轻食</strong>
+          <span>岛上午餐轻量化，水、饮品和小吃为主；正餐放回岛内或黄厝附近。</span>
+          <em>约 180-400 元/人</em>
+        </article>
+        <article class="food">
+          <strong>D3 返程补吃</strong>
+          <span>退房后补一两家没吃到的小吃，或找咖啡店休息，不安排费时排队大餐。</span>
+          <em>约 60-160 元/人</em>
+        </article>
+      </div>
+
+      <h3 class="subhead">重点小吃清单</h3>
+      <div class="food-grid">
+        <article class="food"><strong>沙茶面</strong><span>四里沙茶面、林锦记厦门菜沙茶面等。建议早餐或午餐吃，汤底重口，别和太多炸物叠加。</span><em>约 25-60 元</em></article>
+        <article class="food"><strong>五香条</strong><span>阿杰五香等。适合中山路逛吃加餐，点一份分着吃更舒服。</span><em>约 10-30 元</em></article>
+        <article class="food"><strong>姜母鸭</strong><span>郑百顺姜母鸭等。适合 D1 或 D2 晚餐，建议当正餐吃，不要排在太多小吃后面。</span><em>约 60-140 元</em></article>
+        <article class="food"><strong>鱼丸</strong><span>林锦记鱼丸等。水仙路、镇邦路顺路可吃，适合和沙茶面二选一或少量加点。</span><em>约 15-40 元</em></article>
+        <article class="food"><strong>满煎糕</strong><span>陈丽君满煎糕等。适合买一份当下午茶或带回酒店，不占正餐预算。</span><em>约 8-25 元</em></article>
+        <article class="food"><strong>花生汤</strong><span>中山路附近老店可顺路尝，适合早餐或夜宵。偏甜，建议小份。</span><em>约 10-25 元</em></article>
+        <article class="food"><strong>闽南肠粉</strong><span>林氏闽南肠粉等。作为中山路起点小吃比较顺路，适合两人分食。</span><em>约 15-35 元</em></article>
+        <article class="food"><strong>汤包/小笼</strong><span>鑫旺旺汤包等。适合补充主食，和鱼丸、沙茶面不要全点大份。</span><em>约 20-50 元</em></article>
+      </div>
+
+      <h3 class="subhead">海鲜和正餐怎么安排</h3>
+      <div class="two-col">
+        <article class="note-panel">
+          <h3>稳妥吃法</h3>
+          <ul class="note-list">
+            <li>想吃海鲜，放在 D2 晚上或 D1 晚上，别放返程日。</li>
+            <li>两人普通海鲜正餐按 180-350 元/人预留；如果点贵价鱼虾蟹，上限会明显上浮。</li>
+            <li>优先选菜单清楚、评价稳定、结账规则写明的店，不要被门口低价牌带进去。</li>
+          </ul>
+        </article>
+        <article class="note-panel">
+          <h3>点单前确认</h3>
+          <ul class="note-list">
+            <li>价格单位：按斤、按只、按份还是套餐。</li>
+            <li>加工费、餐具费、服务费是否另收。</li>
+            <li>特价是否限量、是否几选一、是否只针对小规格。</li>
+            <li>看不懂规则就不点，换小吃或普通厦门菜更稳。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="gifts">
+      <div class="section-head">
+        <h2>特产、纪念品与文创</h2>
+        <p class="section-note">建议放在 D3 返程前集中买，控制重量和体积。送人优先选密封食品或有厦门城市元素的文创，自留可以加盖章本、明信片和小摆件。</p>
+      </div>
+
+      <h3 class="subhead">买什么更稳</h3>
+      <div class="food-grid">
+        <article class="food"><strong>馅饼 / 素饼 / 椰子饼</strong><span>适合送长辈、同事和家人，选择独立包装、生产日期近、保质期清楚的盒装款。</span><em>约 30-100 元/盒</em></article>
+        <article class="food"><strong>肉松 / 肉脯 / 鱼皮花生</strong><span>偏零食型伴手礼，适合办公室分享。注意口味、密封性和行李重量，别买散装无标识款。</span><em>约 30-120 元</em></article>
+        <article class="food"><strong>沙茶酱 / 拌面调料</strong><span>适合送爱做饭的人。高铁携带问题不大，但瓶装较重，建议少量买经典口味。</span><em>约 20-80 元</em></article>
+        <article class="food"><strong>闽南茶食组合</strong><span>更正式一点的礼物选择，适合家里长辈或需要体面的伴手礼场景。</span><em>约 80-200 元</em></article>
+        <article class="food"><strong>明信片 / 冰箱贴 / 城市地图</strong><span>轻便好带，适合朋友、同事和自留。优先选鼓浪屿建筑、厦门海岸线、闽南骑楼元素。</span><em>约 10-60 元</em></article>
+        <article class="food"><strong>盖章本 / 印章打卡</strong><span>中山路、沙坡尾、鼓浪屿一带常见。可自带空本，也可现场买小本，成本低、纪念感强。</span><em>约 0-50 元</em></article>
+        <article class="food"><strong>鼓浪屿建筑 / 钢琴主题文创</strong><span>适合 D2 上岛顺手买，选小件即可。岛上价格更游客化，看到喜欢的买一两件就够。</span><em>约 20-150 元</em></article>
+        <article class="food"><strong>植物园 / 集美主题文创</strong><span>如果 D1 去植物园，可看仙人掌、雨林、花草主题周边；如果 D3 去集美，可选嘉庚建筑元素小物。</span><em>约 20-120 元</em></article>
+      </div>
+
+      <h3 class="subhead">在哪里买更顺路</h3>
+      <div class="two-col">
+        <article class="note-panel">
+          <h3>按路线买</h3>
+          <ul class="note-list">
+            <li>中山路 / 镇邦路 / 水仙路：食品伴手礼集中，适合 D1 晚上看款式、D3 返程前补买。</li>
+            <li>沙坡尾：更适合文创小店、明信片、冰箱贴、城市地图和手作小物，D1 下午顺路。</li>
+            <li>鼓浪屿：适合建筑、钢琴、岛屿主题文创，D2 上岛轻买，别带大件。</li>
+            <li>植物园 / 集美学村：适合主题文创，只有顺路时买，不为文创单独绕路。</li>
+            <li>厦门北 / 车站：适合最后补买标准化食品，不适合淘设计感强的文创。</li>
+          </ul>
+        </article>
+        <article class="note-panel">
+          <h3>送礼分配</h3>
+          <ul class="note-list">
+            <li>长辈：低糖或少油茶点、馅饼、素饼，控制甜度和油腻度。</li>
+            <li>同事：独立小包装更好分发，鱼皮花生、饼类、肉松类比大盒礼盒实用。</li>
+            <li>朋友：冰箱贴、明信片、盖章本、城市地图和小摆件更有旅行感。</li>
+            <li>自留：选一个盖章本加 2-3 件小文创，比买一堆同质化食品更有记忆点。</li>
+            <li>预算：普通伴手礼 80-300 元/人够用；如果要带正式礼盒，另按 100-200 元/份预留。</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="subhead">购买避雷</h3>
+      <div class="warning-grid">
+        <article class="note-panel warning">
+          <h3>别第一天买太多</h3>
+          <ul class="note-list">
+            <li>端午天气热，背着食品和礼盒走植物园、鼓浪屿会明显拖累体力。</li>
+            <li>看中款式可以先拍照定位，返程前再买。</li>
+          </ul>
+        </article>
+        <article class="note-panel warning">
+          <h3>食品看标签</h3>
+          <ul class="note-list">
+            <li>不买没有生产日期、配料表、厂家信息和保质期的散装食品。</li>
+            <li>先试吃再买，给长辈和同事的尽量选保守口味。</li>
+          </ul>
+        </article>
+        <article class="note-panel warning">
+          <h3>文创看做工</h3>
+          <ul class="note-list">
+            <li>不要因为“限定”“网红同款”冲动买，优先看设计、材质、印刷和边角做工。</li>
+            <li>冰箱贴、小摆件尽量选不易掉漆、不易断的小尺寸。</li>
+          </ul>
+        </article>
+        <article class="note-panel warning">
+          <h3>控制携带难度</h3>
+          <ul class="note-list">
+            <li>少买易碎玻璃、陶瓷大件、需要冷藏或气味很重的食品。</li>
+            <li>返程高铁前预留整理行李时间，别在进站前临时拆装。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="warnings">
+      <div class="section-head">
+        <h2>注意事项与避雷</h2>
+        <p class="section-note">来自小红书近期检索和常规出行约束，重点是住宿、海鲜、鼓浪屿船票和 6 月天气。</p>
+      </div>
+      <div class="warning-grid">
+        <article class="note-panel warning">
+          <h3>曾厝垵</h3>
+          <ul class="note-list">
+            <li>可以去，但建议作为 D2 傍晚短逛，不单独占半天。</li>
+            <li>不建议拖行李过去，也不建议住深处自建房民宿。</li>
+            <li>重点当作小吃街和海边散步点，别在那里临时吃重海鲜。</li>
+          </ul>
+        </article>
+        <article class="note-panel warning">
+          <h3>鼓浪屿</h3>
+          <ul class="note-list">
+            <li>提前买船票，端午不要当天碰运气。</li>
+            <li>带身份证原件，不拖箱上岛。</li>
+            <li>岛上不吃临时拉客型海鲜大餐。</li>
+          </ul>
+        </article>
+        <article class="note-panel warning">
+          <h3>海鲜消费</h3>
+          <ul class="note-list">
+            <li>警惕门口低价移动招牌。</li>
+            <li>确认加工费、餐具费、服务费和特价条件。</li>
+            <li>不点老板推荐但不说价格的菜。</li>
+          </ul>
+        </article>
+        <article class="note-panel warning">
+          <h3>天气与体力</h3>
+          <ul class="note-list">
+            <li>6 月厦门闷热多雨，带晴雨伞、防晒和驱蚊。</li>
+            <li>植物园、鼓浪屿、环岛路避开中午暴晒。</li>
+            <li>下雨时把植物园改成集美或市区路线。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="section-head">
+        <h2>临行检查</h2>
+        <p class="section-note">按时间点检查，比出发当天临时翻订单更稳。</p>
+      </div>
+      <div class="checklist">
+        <article class="note-panel">
+          <h3>出发前 7 天</h3>
+          <ul class="note-list">
+            <li>确认 6 月 18 日去程票。</li>
+            <li>确认 6 月 21 日返程票。</li>
+            <li>确认 3 晚酒店订单和深夜入住规则。</li>
+            <li>查询鼓浪屿船票余票。</li>
+          </ul>
+        </article>
+        <article class="note-panel">
+          <h3>出发前 3 天</h3>
+          <ul class="note-list">
+            <li>看厦门逐日天气预报。</li>
+            <li>检查酒店近期差评。</li>
+            <li>准备雨天替代路线。</li>
+            <li>保存码头、酒店、车站地址。</li>
+          </ul>
+        </article>
+        <article class="note-panel">
+          <h3>出发当天</h3>
+          <ul class="note-list">
+            <li>身份证、充电宝、雨伞放随身包。</li>
+            <li>截图高铁票、船票、酒店订单。</li>
+            <li>确认厦门北到酒店的路线和耗时。</li>
+            <li>D0 洗漱用品单独放好。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <h2>信息来源</h2>
+        <p class="section-note">页面内容来自前面生成的 Markdown 规划，并补充官方公共信息与可授权图片来源。</p>
+      </div>
+      <article class="source-panel">
+        <p>RedBookSkills 检索时间：2026-05-17。检索关键词包括厦门端午旅游攻略、厦门三天两夜攻略不踩雷、厦门住宿避雷、厦门八市中山路美食避雷、厦门六月天气旅游、厦门伴手礼文创特产礼物等。</p>
+        <ul>
+          <li>国务院办公厅：2026 年端午节为 6 月 19 日至 21 日放假，共 3 天。</li>
+          <li>中国铁路 12306：车票预售期为 15 天（含当天），调整时以铁路运输企业公告为准。</li>
+          <li>厦门轮渡有限公司：鼓浪屿旅游客运航线实名制购票，可提前购买 15 天内船票。</li>
+          <li>中国天气网：厦门属亚热带海洋性季风气候，温暖湿润，5-8 月雷暴较多。</li>
+        </ul>
+        <div class="credit">
+          图片：Xiamen night Skyline from Gulangyu.JPG by Popolon, CC BY-SA 3.0；Fishing boats in Shapowei, Xiamen.jpg by mojojo.cn, CC BY-SA 2.0，来源 Wikimedia Commons。
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
