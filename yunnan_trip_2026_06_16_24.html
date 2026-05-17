@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深圳北出发云南 9 日行程 | 昆明 大理 丽江 香格里拉</title>
+  <style>
+    :root {
+      --ink: #26312f;
+      --muted: #65706d;
+      --line: #d9e1dd;
+      --paper: #fbfaf6;
+      --card: #ffffff;
+      --pine: #1f5f55;
+      --lake: #2d7f95;
+      --clay: #b75f3a;
+      --gold: #d79b45;
+      --sky: #d9eef0;
+      --soft: #f1efe8;
+      --shadow: 0 18px 45px rgba(32, 47, 44, .10);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--pine); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(251, 250, 246, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--ink);
+      background: rgba(255,255,255,.62);
+      border: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      border-color: var(--line);
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 42px 18px 30px;
+    }
+
+    .hero {
+      min-height: 460px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+      gap: 28px;
+      align-items: end;
+      padding: 40px;
+      color: #f9fbf5;
+      background:
+        linear-gradient(135deg, rgba(26, 76, 71, .88), rgba(25, 66, 95, .72) 46%, rgba(141, 80, 43, .68)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23d7eceb'/%3E%3Cpath d='M0 585 C140 530 234 592 363 540 C500 486 620 510 742 455 C872 396 958 402 1086 340 C1248 263 1388 298 1600 222 L1600 900 L0 900 Z' fill='%237aa5a0'/%3E%3Cpath d='M0 650 C150 570 290 616 445 555 C585 500 680 545 810 488 C958 423 1088 444 1220 370 C1370 286 1480 300 1600 260 L1600 900 L0 900 Z' fill='%233b7b76'/%3E%3Cpath d='M0 725 C155 666 270 690 420 628 C560 570 720 626 880 548 C1035 474 1160 525 1310 440 C1440 366 1515 382 1600 342 L1600 900 L0 900 Z' fill='%232f5f59'/%3E%3Cpath d='M0 785 C220 748 305 725 500 755 C705 787 842 693 1040 730 C1260 770 1395 665 1600 690 L1600 900 L0 900 Z' fill='%23f1efe8'/%3E%3Ccircle cx='1230' cy='170' r='78' fill='%23f3cf7c' opacity='.78'/%3E%3C/svg%3E") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #0f342f;
+      background: #f3cf7c;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+
+    h1 {
+      margin: 22px 0 14px;
+      font-size: clamp(34px, 5vw, 66px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .hero p {
+      margin: 0;
+      color: rgba(249, 251, 245, .92);
+      font-size: 18px;
+      max-width: 720px;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(132px, 1fr));
+      gap: 10px;
+      width: 100%;
+      max-width: 420px;
+      justify-self: end;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: var(--radius);
+      padding: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat b {
+      display: block;
+      font-size: 24px;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .hero-stat span {
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 18px 64px;
+    }
+
+    section {
+      margin: 34px 0;
+      scroll-margin-top: 84px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height: 1.18;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      color: var(--muted);
+      margin: 0;
+      max-width: 720px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .grid > *,
+    .card,
+    .hero,
+    .hero-inner,
+    .hero-stat,
+    .day-body {
+      min-width: 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 24px rgba(38,49,47,.05);
+      padding: 18px;
+    }
+
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .metric {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--pine);
+      margin-bottom: 4px;
+    }
+
+    .tagrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #45514e;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .route-map {
+      width: 100%;
+      min-height: 270px;
+      background:
+        radial-gradient(circle at 14% 20%, rgba(215,155,69,.20), transparent 26%),
+        radial-gradient(circle at 72% 32%, rgba(45,127,149,.18), transparent 28%),
+        linear-gradient(180deg, #f7fbf9, #eef5f1);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .route-line {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .route-line::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      background: linear-gradient(var(--pine), var(--lake), var(--clay));
+      border-radius: 999px;
+    }
+
+    .route-stop {
+      position: relative;
+      padding: 10px 12px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(217,225,221,.88);
+      border-radius: var(--radius);
+    }
+
+    .route-stop::before {
+      content: "";
+      position: absolute;
+      left: -27px;
+      top: 18px;
+      width: 13px;
+      height: 13px;
+      border: 3px solid #fff;
+      background: var(--pine);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--pine);
+    }
+
+    .route-stop b { display: block; }
+    .route-stop span { color: var(--muted); font-size: 13px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      table-layout: fixed;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 9px;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    th {
+      color: #31423e;
+      background: #f4f7f4;
+      font-weight: 800;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: minmax(150px, 190px) 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .day-date {
+      position: sticky;
+      top: 78px;
+      background: var(--pine);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .day-date strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .day-date span {
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+    }
+
+    .day-body {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: 0 10px 24px rgba(38,49,47,.05);
+    }
+
+    .timeblock {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .timeblock:last-child { border-bottom: 0; }
+    .timeblock time {
+      color: var(--clay);
+      font-weight: 800;
+    }
+
+    .budget-band {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .budget-item {
+      border-radius: var(--radius);
+      padding: 13px;
+      color: #18312e;
+      background: #edf5f2;
+      border: 1px solid #d6e6e1;
+    }
+
+    .budget-item b {
+      display: block;
+      font-size: 18px;
+      color: var(--pine);
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li { margin: 5px 0; }
+
+    .callout {
+      border-left: 5px solid var(--gold);
+      background: #fff8e7;
+      padding: 14px 16px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .danger { border-left-color: var(--clay); background: #fff1ea; }
+    .ok { border-left-color: var(--pine); background: #edf7f1; }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .checklist label {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--pine);
+      flex: 0 0 auto;
+    }
+
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 28px;
+      }
+      .hero-inner { max-width: none; }
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: none;
+        justify-self: stretch;
+      }
+      .span-3, .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 12; }
+      .budget-band { grid-template-columns: repeat(2, 1fr); }
+      .day { grid-template-columns: 1fr; }
+      .day-date { position: static; }
+      .checklist { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      header { padding-top: 24px; }
+      .hero { border-radius: 12px; padding: 22px; }
+      .hero-inner { width: 100%; }
+      h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-head { display: block; }
+      .timeblock { grid-template-columns: 76px 1fr; }
+      th, td { font-size: 13px; padding: 9px 7px; }
+      .budget-band { grid-template-columns: 1fr; }
+      .nav { padding-left: 12px; padding-right: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav" aria-label="页面导航">
+      <a href="#overview">总览</a>
+      <a href="#booking">预订</a>
+      <a href="#route">路线</a>
+      <a href="#daily">每日行程</a>
+      <a href="#lodging">住宿</a>
+      <a href="#food">美食</a>
+      <a href="#gifts">特产文创</a>
+      <a href="#pitfalls">避雷</a>
+      <a href="#checklist">清单</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </div>
+
+  <header>
+    <div class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow">2026.06.16 - 06.24 · 深圳北出发</span>
+        <h1>云南 9 日：昆明、大理、丽江、香格里拉</h1>
+        <p>去程高铁深圳北到昆明南，云南段尽量用动车串联，回程昆明长水飞深圳宝安后接驳深圳北。预算按人均 4500 元压线设计，含一套丽江写真。</p>
+      </div>
+      <div class="hero-grid" aria-label="关键摘要">
+        <div class="hero-stat"><b>9天8晚</b><span>含端午 6/19-6/21</span></div>
+        <div class="hero-stat"><b>约4300-5000</b><span>默认两人分摊住宿/打车</span></div>
+        <div class="hero-stat"><b>4城动线</b><span>昆明 → 大理 → 丽江 → 香格里拉 → 昆明</span></div>
+        <div class="hero-stat"><b>写真预算</b><span>399-699 元，拒绝低价加项</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="section-head">
+        <h2>总览</h2>
+        <p class="note">核心原则：少走回头路，端午高峰期间把高风险景点提前预约，香格里拉安排轻节奏适应海拔。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-4">
+          <h3>适合的玩法</h3>
+          <p>中等强度，自由行优先，景点不堆满。洱海只选精华段，丽江留半天写真，香格里拉不安排连轴转。</p>
+          <div class="tagrow">
+            <span class="tag">动车串联</span>
+            <span class="tag">雨季备选</span>
+            <span class="tag">高反缓冲</span>
+          </div>
+        </article>
+        <article class="card span-4">
+          <h3>预算判断</h3>
+          <p>4500 元可做，但需要控制三件事：回程机票尽量 700 元以内、写真控制在 499 元左右、住宿按两人分摊。</p>
+          <p><strong>单人单间：</strong>总预算更现实是 5200-5900 元。</p>
+        </article>
+        <article class="card span-4">
+          <h3>关键风险</h3>
+          <p>6 月 19 日至 21 日是端午假期，丽江、玉龙雪山、大理住宿会更紧；6 月云南已进入雨季，雪山索道可能因大风停运。</p>
+        </article>
+        <article class="card span-12">
+          <h3>人均预算拆分</h3>
+          <div class="budget-band">
+            <div class="budget-item"><b>2195-2595</b>大交通与城际</div>
+            <div class="budget-item"><b>550-800</b>住宿分摊</div>
+            <div class="budget-item"><b>700-900</b>餐饮饮品</div>
+            <div class="budget-item"><b>480-760</b>门票与景交</div>
+            <div class="budget-item"><b>399-699</b>丽江写真</div>
+            <div class="budget-item"><b>200-350</b>特产文创</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="section-head">
+        <h2>预订时间线</h2>
+        <p class="note">以下按 2026 年日期写死；12306 具体起售时刻以铁路 12306 App 的“起售时间”查询为准。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-7">
+          <table>
+            <thead>
+              <tr><th>时间</th><th>要做什么</th><th>建议</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>现在-5/25</td><td>先订可取消酒店、盯回程机票</td><td>6/18-6/22 的丽江/香格里拉住宿优先锁；回程机票低于 700 元可下手。</td></tr>
+              <tr><td>6/2</td><td>抢 6/16 深圳北 → 昆明南</td><td>优先 G2966 08:08-15:40 或 G2976 11:14-18:46；二等座参考 680.5 元。</td></tr>
+              <tr><td>6/3-6/4</td><td>买昆明 → 大理、大理 → 丽江</td><td>昆明南到大理约 2 小时，参考 145 元；大理到丽江约 80 元。</td></tr>
+              <tr><td>6/7</td><td>买 6/21 丽江 → 香格里拉</td><td>选早班到香格里拉，下午只安排松赞林或独克宗，别马上重体力。</td></tr>
+              <tr><td>6/9</td><td>买 6/23 香格里拉 → 昆明</td><td>C644 07:20-12:52 可把下午留给昆明，二等座参考 260 元。</td></tr>
+              <tr><td>6/12-6/13</td><td>蹲玉龙雪山 6/19 票</td><td>官方小程序关注 7 天内票务；冰川公园大索道抢不到就改云杉坪/牦牛坪。</td></tr>
+              <tr><td>6/14 前</td><td>确认写真订单</td><td>写清服装、妆造、拍摄时长、底片、精修、加片价格、雨天改期。</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <aside class="card span-5">
+          <h3>交通参考</h3>
+          <ul>
+            <li><strong>去程：</strong>深圳北到昆明南高铁约 7.25-7.5 小时，二等座约 680.5 元。</li>
+            <li><strong>云南段：</strong>昆明南-大理约 145 元，大理-丽江约 80 元，丽江-香格里拉约 80 元。</li>
+            <li><strong>返程：</strong>昆明长水飞深圳宝安，直飞约 2 小时 20 分，机票按 650-900 元估算。</li>
+            <li><strong>回深圳北：</strong>深圳宝安机场不是深圳北；到达后地铁 11 号线换 5 号线，或夜间打车到深圳北。</li>
+          </ul>
+          <div class="callout">
+            6 月 24 日回程建议选 14:00-20:00 起飞的直飞航班，既不压早起，也能避开凌晨到深圳后的接驳风险。
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="route">
+      <div class="section-head">
+        <h2>路线</h2>
+        <p class="note">这条线把长距离移动放在白天，最后一天回到昆明，降低误机风险。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-5">
+          <div class="route-map" aria-label="云南路线图">
+            <div class="route-line">
+              <div class="route-stop"><b>深圳北</b><span>6/16 高铁出发</span></div>
+              <div class="route-stop"><b>昆明</b><span>1晚中转，老街/米线/鲜花饼</span></div>
+              <div class="route-stop"><b>大理</b><span>2天：古城、喜洲、洱海精华段</span></div>
+              <div class="route-stop"><b>丽江</b><span>3晚：玉龙雪山、写真、束河/白沙</span></div>
+              <div class="route-stop"><b>香格里拉</b><span>2晚：松赞林、普达措、高原缓冲</span></div>
+              <div class="route-stop"><b>昆明 → 深圳宝安 → 深圳北</b><span>6/24 飞回并接驳</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="card span-7">
+          <h3>为什么这么排</h3>
+          <ul>
+            <li>昆明只是进出中转，不把预算花在市内长停留。</li>
+            <li>大理避开全程环洱海，只做喜洲、龙龛、生态廊道等精华点，省体力也省钱。</li>
+            <li>玉龙雪山放在 6/19，前一晚已到丽江，票务失败还有 6/20 的调整空间。</li>
+            <li>写真放在 6/20，遇雨可改室内/古城廊下/束河咖啡店，不影响后续火车。</li>
+            <li>香格里拉先轻后重，抵达当天只做市区与松赞林，第二天再去普达措。</li>
+          </ul>
+          <div class="callout ok">
+            预算压线方案：玉龙雪山优先选“门票 + 观光车 + 云杉坪/蓝月谷”，比冰川公园大索道更稳、更省，也更适合端午人多时段。
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="daily">
+      <div class="section-head">
+        <h2>每日行程</h2>
+        <p class="note">时间按顺路与体力设计，车次是 2026-05-17 按 12306 近期开售日查询到的参考样式，正式以购票日为准。</p>
+      </div>
+      <div class="timeline">
+        <article class="day">
+          <div class="day-date"><strong>Day 1</strong><span>6/16 周二 · 深圳北 → 昆明</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>07:00</time><div>到深圳北，带好身份证，早餐和水在站内解决。</div></div>
+            <div class="timeblock"><time>08:08</time><div>优先 G2966 深圳北 → 昆明南，约 15:40 到；若起不来，可选 11:14 左右车次。</div></div>
+            <div class="timeblock"><time>16:40</time><div>地铁进昆明市区，住塘子巷/东风广场/昆明站附近，方便第二天去昆明南。</div></div>
+            <div class="timeblock"><time>19:00</time><div>昆明老街轻逛，晚餐小锅米线、汽锅鸡或过桥米线，人均 40-80 元。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 2</strong><span>6/17 周三 · 昆明 → 大理</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>07:34</time><div>昆明南 → 大理，约 2 小时 15 分，二等座参考 145 元。</div></div>
+            <div class="timeblock"><time>10:30</time><div>到酒店寄存行李，建议住大理古城南门/东门外或才村，避开古城核心拖箱。</div></div>
+            <div class="timeblock"><time>12:00</time><div>午餐吃饵丝、乳扇、凉鸡米线或砂锅鱼，人均 35-70 元。</div></div>
+            <div class="timeblock"><time>14:00</time><div>崇圣寺三塔或古城慢逛；若预算紧，三塔只在外部机位拍照，把门票留给后面雪山/普达措。</div></div>
+            <div class="timeblock"><time>17:00</time><div>龙龛码头/生态廊道看洱海日落，可骑行 1-1.5 小时，不建议第一天长距离环海。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 3</strong><span>6/18 周四 · 大理 → 丽江</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>08:30</time><div>喜洲古镇、稻田、转角楼一带，早上人少，适合拍照。</div></div>
+            <div class="timeblock"><time>12:00</time><div>午餐吃喜洲粑粑、酸辣鱼、木瓜水；别在景区门口盲点高价海景餐。</div></div>
+            <div class="timeblock"><time>13:30</time><div>洱海东线择一：双廊短停或挖色远眺。预算版用拼车/包车半日，不租电动车硬环海。</div></div>
+            <div class="timeblock"><time>17:32</time><div>大理 → 丽江，约 2 小时，参考 C327；也可选 18:14 左右车次。</div></div>
+            <div class="timeblock"><time>20:00</time><div>入住丽江古城北门/束河/白沙附近。晚餐腊排骨火锅或鸡豆凉粉，人均 50-90 元。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 4</strong><span>6/19 周五 · 端午 · 玉龙雪山</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>06:30</time><div>从丽江出发去玉龙雪山，提前确认索道与天气；端午首日务必早走。</div></div>
+            <div class="timeblock"><time>08:00</time><div>门票 100 元、景区观光车 20 元为基础支出；索道按抢票情况选冰川公园、云杉坪或牦牛坪。</div></div>
+            <div class="timeblock"><time>11:30</time><div>蓝月谷慢走拍照，不要在高海拔区域跑跳。午餐可自带面包/巧克力，景区内餐饮偏贵。</div></div>
+            <div class="timeblock"><time>15:30</time><div>回丽江市区休息，体力好再去白沙古镇喝咖啡看雪山远景。</div></div>
+            <div class="timeblock"><time>备选</time><div>大风停运时改白沙古镇、黑龙潭、束河古镇，把雪山索道退改规则按订单执行。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 5</strong><span>6/20 周六 · 丽江写真</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>08:30</time><div>写真妆造，推荐 399-699 元基础套餐，控制在一套服装、3-4 小时拍摄。</div></div>
+            <div class="timeblock"><time>12:30</time><div>吃清淡午餐，下午选片。任何“加精修才好看”“底片另买很贵”的话术，都按合同处理。</div></div>
+            <div class="timeblock"><time>16:30</time><div>束河或白沙轻逛，适合补拍手机照片。端午周六不要去古城四方街核心挤人。</div></div>
+            <div class="timeblock"><time>20:00</time><div>晚餐纳西烤肉、米灌肠或菌汤锅；第二天去高原，别饮酒。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 6</strong><span>6/21 周日 · 丽江 → 香格里拉</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>08:05</time><div>丽江 → 香格里拉，约 1.5 小时；也可选 09:41 左右车次。到站后先去酒店寄存。</div></div>
+            <div class="timeblock"><time>12:00</time><div>午餐以面、粥、青稞饼、牦牛肉小份为主，抵达第一餐别暴食。</div></div>
+            <div class="timeblock"><time>14:00</time><div>松赞林寺，门票参考 90 元，台阶多，慢走。若头痛明显，只看外部机位和拉姆央措湖。</div></div>
+            <div class="timeblock"><time>17:30</time><div>纳帕海/依拉草原外围看光线，不建议临时参加高价骑马。晚上独克宗古城转经筒。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 7</strong><span>6/22 周一 · 普达措</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>08:30</time><div>去普达措国家公园，门票含游览车参考 138 元。城区客运站有班车，也可拼车。</div></div>
+            <div class="timeblock"><time>10:00</time><div>属都湖、栈道、森林草甸为主，边走边停，带雨衣和保温杯。</div></div>
+            <div class="timeblock"><time>14:30</time><div>返程回独克宗休息。若当天雨大，就改松赞林深度参观、龟山公园、咖啡馆写明信片。</div></div>
+            <div class="timeblock"><time>19:00</time><div>牦牛肉火锅或尼西土锅鸡，人均 70-120 元；高反敏感者少油、少酒、早睡。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 8</strong><span>6/23 周二 · 香格里拉 → 昆明</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>07:20</time><div>C644 香格里拉 → 昆明，约 12:52 到，二等座参考 260 元。</div></div>
+            <div class="timeblock"><time>14:00</time><div>住塘子巷/东风广场/昆明站附近，兼顾晚餐和第二天去机场。</div></div>
+            <div class="timeblock"><time>15:30</time><div>二选一：云南省博物馆+官渡古镇，或斗南花市看鲜花。别买太大束鲜花，回程携带麻烦。</div></div>
+            <div class="timeblock"><time>19:00</time><div>吃正规店野生菌火锅或汽锅鸡。菌子必须充分煮熟，不吃来源不明的凉拌菌。</div></div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-date"><strong>Day 9</strong><span>6/24 周三 · 昆明 → 深圳</span></div>
+          <div class="day-body">
+            <div class="timeblock"><time>上午</time><div>按航班时间选择翠湖、讲武堂、昆明老街或直接睡到自然醒。行李寄酒店前台。</div></div>
+            <div class="timeblock"><time>起飞前3h</time><div>出发去昆明长水机场，市区地铁/打车都预留 60-90 分钟。</div></div>
+            <div class="timeblock"><time>下午/晚上</time><div>昆明长水 → 深圳宝安，直飞约 2 小时 20 分。若航班晚点，优先保留打车预算。</div></div>
+            <div class="timeblock"><time>抵深后</time><div>地铁 11 号线机场站 → 前海湾换 5 号线 → 深圳北站；太晚就打车，约 45-70 分钟。</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="lodging">
+      <div class="section-head">
+        <h2>住宿</h2>
+        <p class="note">预算按干净、交通方便、可取消优先；照片很好看的“海景/古城核心房”不一定适合住。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-3">
+          <h3>昆明 2 晚</h3>
+          <p>塘子巷、东风广场、昆明站附近。去昆明南、长水机场、市区吃饭都方便。</p>
+          <p><strong>预算：</strong>140-260 元/间夜。</p>
+        </article>
+        <article class="card span-3">
+          <h3>大理 1 晚</h3>
+          <p>古城南门/东门外、才村、龙龛附近。别住古城最核心酒吧街，别拖行李走石板路。</p>
+          <p><strong>预算：</strong>180-280 元/间夜。</p>
+        </article>
+        <article class="card span-3">
+          <h3>丽江 3 晚</h3>
+          <p>束河、白沙、古城北门/南门外。写真和雪山出发都方便，晚上更安静。</p>
+          <p><strong>预算：</strong>180-320 元/间夜。</p>
+        </article>
+        <article class="card span-3">
+          <h3>香格里拉 2 晚</h3>
+          <p>独克宗北门、坛城广场附近。优先电梯、空调/地暖、房间供氧或氧气可租。</p>
+          <p><strong>预算：</strong>220-420 元/间夜。</p>
+        </article>
+        <article class="card span-12">
+          <div class="callout danger">
+            小红书住宿避雷集中在大理海景房与古城民宿：下单前看近 30 天差评，确认热水、隔音、空调/取暖、是否要爬坡、停车/接送、退订规则。海景房适合拍照，不一定适合睡觉。
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="food">
+      <div class="section-head">
+        <h2>美食</h2>
+        <p class="note">每天人均 80-110 元可以吃得不错，重餐放在非赶车日，香格里拉少油少酒。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-3">
+          <h3>昆明</h3>
+          <ul>
+            <li>小锅米线、过桥米线</li>
+            <li>汽锅鸡、豆花米线</li>
+            <li>鲜花饼、云南咖啡</li>
+            <li>野生菌火锅只选正规店</li>
+          </ul>
+        </article>
+        <article class="card span-3">
+          <h3>大理</h3>
+          <ul>
+            <li>喜洲粑粑、乳扇</li>
+            <li>饵丝、凉鸡米线</li>
+            <li>酸辣鱼、砂锅鱼</li>
+            <li>雕梅、木瓜水</li>
+          </ul>
+        </article>
+        <article class="card span-3">
+          <h3>丽江</h3>
+          <ul>
+            <li>腊排骨火锅</li>
+            <li>纳西烤肉、鸡豆凉粉</li>
+            <li>米灌肠、酥油茶试小份</li>
+            <li>写真当天少吃太咸太辣</li>
+          </ul>
+        </article>
+        <article class="card span-3">
+          <h3>香格里拉</h3>
+          <ul>
+            <li>牦牛肉火锅</li>
+            <li>尼西土锅鸡</li>
+            <li>青稞饼、酥油茶</li>
+            <li>高反时优先粥面和碳水</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="gifts">
+      <div class="section-head">
+        <h2>特产和文创</h2>
+        <p class="note">按“好带、好送、不容易踩坑”排序，重物和高客单价谨慎买。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-4">
+          <h3>适合带回深圳</h3>
+          <ul>
+            <li>鲜花饼：轻便但保质期短，回程前一天买。</li>
+            <li>云南咖啡：保山、普洱产区豆或挂耳，适合送同事。</li>
+            <li>牦牛肉干/青稞饼：选有生产信息的小包装。</li>
+            <li>扎染小方巾/帆布袋：大理好买，体积小。</li>
+          </ul>
+        </article>
+        <article class="card span-4">
+          <h3>文创方向</h3>
+          <ul>
+            <li>大理瓦猫、甲马版画、扎染杯垫。</li>
+            <li>丽江东巴纸、东巴文字书签、明信片。</li>
+            <li>香格里拉藏香、转经筒元素挂件、普达措自然主题冰箱贴。</li>
+            <li>昆明斗南干花、小型永生花，别买超大束。</li>
+          </ul>
+        </article>
+        <article class="card span-4">
+          <h3>谨慎购买</h3>
+          <ul>
+            <li>银器、玉石、蜜蜡、虫草、天价普洱：不懂不买。</li>
+            <li>野生菌干货：只买明确品种和包装信息的，不买散装“神奇功效”。</li>
+            <li>手鼓、披肩：古城常见，先比价，不被现场氛围带着冲动消费。</li>
+            <li>鲜花：航班携带不稳定，优先干花或小束。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="pitfalls">
+      <div class="section-head">
+        <h2>避雷</h2>
+        <p class="note">结合官方规则和小红书近期反馈整理，社交平台内容只作为体验参考，不替代景区和票务官方公告。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-6">
+          <h3>写真避雷</h3>
+          <ul>
+            <li>低价套餐常见后续加项：服装升级、睫毛、配饰、精修、底片、外景车费。</li>
+            <li>下单前写清：服装套数、妆造次数、摄影时长、底片是否全送、精修张数、加片单价。</li>
+            <li>不要只看客片，要求看普通客人的原片/精修对比；不要把全款直接转给个人。</li>
+            <li>雨天改期、迟到、取消、照片交付时间，都要在订单里留痕。</li>
+          </ul>
+        </article>
+        <article class="card span-6">
+          <h3>高原与天气</h3>
+          <ul>
+            <li>丽江约 2400 米，香格里拉城区约 3300 米；抵达香格里拉第一天不要洗头、饮酒、跑跳或爬太多楼。</li>
+            <li>带雨衣、可折叠伞、防水鞋袋、薄羽绒或冲锋衣；6 月早晚和雪山区域会冷。</li>
+            <li>头痛、恶心、胸闷明显时停止游玩，吸氧休息，必要时下撤或就医。</li>
+            <li>玉龙雪山索道遇大风可能停运，别把不可退的写真/车票排在同一天晚上太紧。</li>
+          </ul>
+        </article>
+        <article class="card span-6">
+          <h3>交通避雷</h3>
+          <ul>
+            <li>端午期间车票开售就买，候补同时开；不要相信“内部票”。</li>
+            <li>大理不建议电动车全环洱海，路远、耗电、日晒雨淋，且部分路段管理严格。</li>
+            <li>香格里拉出租/拼车先谈总价和包含范围，纳帕海骑马、藏服拍照先问清是否自愿。</li>
+            <li>回深圳宝安后去深圳北，晚到先查地铁末班，别把最后一段接驳忽略。</li>
+          </ul>
+        </article>
+        <article class="card span-6">
+          <h3>购物避雷</h3>
+          <ul>
+            <li>普洱茶、银器、药材、虫草不做高预算购买，除非你有可靠渠道。</li>
+            <li>野生菌必须煮熟，不吃不认识的菌，不在路边摊尝鲜。</li>
+            <li>古城酒吧和旅拍拉客多，所有价格先问“总共多少钱”。</li>
+            <li>住宿差评重点看热水、隔音、霉味、取暖、爬坡、退订，而不是只看装修照片。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="section-head">
+        <h2>出发清单</h2>
+        <p class="note">按 6 月雨季和高原准备，尽量轻装。</p>
+      </div>
+      <div class="checklist">
+        <label><input type="checkbox">身份证、少量现金、银行卡、学生证/优惠证件</label>
+        <label><input type="checkbox">12306、航旅纵横/航司 App、酒店订单截图</label>
+        <label><input type="checkbox">雨衣、折叠伞、防水袋、快干衣</label>
+        <label><input type="checkbox">薄羽绒/冲锋衣、长裤、舒适防滑鞋</label>
+        <label><input type="checkbox">防晒霜、墨镜、帽子、润唇膏</label>
+        <label><input type="checkbox">晕车药、肠胃药、创可贴、个人常用药</label>
+        <label><input type="checkbox">充电宝、充电器、数据线、耳机</label>
+        <label><input type="checkbox">写真隐形眼镜/胸贴/打底裤/卸妆湿巾</label>
+        <label><input type="checkbox">保温杯、葡萄糖或巧克力、少量零食</label>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <h2>来源</h2>
+        <p class="note">研究日期：2026-05-17。交通和景区以官方信息优先，小红书用于近期体验和避雷趋势。</p>
+      </div>
+      <div class="grid">
+        <article class="card span-6">
+          <h3>官方/主来源</h3>
+          <ul>
+            <li><a href="https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm?sourcefrom=aladdin">中国政府网：2026 年节假日安排</a></li>
+            <li><a href="https://www.12306.cn/mormhweb/zxdt/202205/t20220531_37508.html">中国铁路 12306：铁路客票预售期 15 天</a></li>
+            <li>铁路 12306 官方接口：2026-05-31 样例车次、余票与票价查询</li>
+            <li><a href="https://www.lijiang.cn/news/travel/article/172717.html">玉龙雪山景区票务公告，2026-05-12</a></li>
+            <li><a href="https://www.lijiang.cn/news/travel/article/164510.html">玉龙雪山官方小程序和线下售票点通告</a></li>
+            <li><a href="https://www.pdcuo.cn/">普达措国家公园官网</a></li>
+            <li><a href="https://www.xgllszljq.cn/Introduction.html">香格里拉松赞林景区官网</a></li>
+            <li><a href="https://www.szairport.com/szairport/ditie/zlm_tt.shtml">深圳宝安国际机场：地铁接驳</a></li>
+          </ul>
+        </article>
+        <article class="card span-6">
+          <h3>小红书检索</h3>
+          <ul>
+            <li>关键词：云南 6 月旅游攻略不踩雷、昆明大理丽江香格里拉 8 天游、大理住宿避雷、丽江写真避雷价格、香格里拉住宿高反避雷、云南伴手礼文创特产。</li>
+            <li>代表性趋势：大理海景房和古城民宿差评集中在隔音/设施/服务；丽江写真集中在低价引流和后期加价；香格里拉集中在高反、供氧、取暖和轻量行程。</li>
+            <li>代表性笔记 ID：68d57d030000000012017022、69e9ea020000000022028d0d、69e8479f000000001b000760、69368c32000000001d03f449。</li>
+            <li>机票价格参考：Trip.com 显示昆明-深圳直飞常见约 2 小时 20 分，6 月均价约 S$127；实际以航司/平台下单价为准。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      本页为自由行规划，不替代景区、铁路、航司、酒店的实时订单规则。端午与天气会改变价格和开放状态，出发前 48 小时请复核车次、航班、景区公告和天气。
+    </footer>
+  </main>
+</body>
+</html>
