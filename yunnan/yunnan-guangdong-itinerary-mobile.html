@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>移动端 H5｜云南 + 广东 2026 年 6 月行程</title>
+  <style>
+    :root {
+      --ink: #17231f;
+      --muted: #607069;
+      --paper: #fffdfa;
+      --base: #f6f2ea;
+      --line: #dce5df;
+      --green: #214f3d;
+      --teal: #327780;
+      --clay: #b6633b;
+      --gold: #c88a2d;
+      --blue: #315f8b;
+      --rose: #b95660;
+      --shadow: 0 14px 32px rgba(23, 35, 31, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--base);
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.66;
+      letter-spacing: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 253, 250, 0.92), rgba(246, 242, 234, 0.96) 280px),
+        var(--base);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    button,
+    summary {
+      font: inherit;
+    }
+
+    .app {
+      width: min(100%, 480px);
+      margin: 0 auto;
+      padding-bottom: calc(84px + env(safe-area-inset-bottom));
+      background: rgba(255, 253, 250, 0.36);
+    }
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(36, 77, 61, 0.12);
+      background: rgba(255, 253, 250, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .top-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+    }
+
+    .brand {
+      min-width: 0;
+    }
+
+    .brand strong {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    .desktop-link {
+      flex: 0 0 auto;
+      min-height: 32px;
+      padding: 6px 10px;
+      border: 1px solid rgba(50, 119, 128, 0.24);
+      border-radius: 8px;
+      color: var(--teal);
+      background: rgba(50, 119, 128, 0.08);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    header {
+      padding: 18px 14px 10px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border: 1px solid rgba(182, 99, 59, 0.2);
+      border-radius: 8px;
+      color: var(--clay);
+      background: rgba(182, 99, 59, 0.08);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 12px 0 10px;
+      font-size: 30px;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .action {
+      display: flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .action.primary {
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 10px 24px rgba(33, 79, 61, 0.2);
+    }
+
+    .action.secondary {
+      border: 1px solid rgba(33, 79, 61, 0.18);
+      color: var(--green);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .route-card {
+      margin-top: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(36, 77, 61, 0.13);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .route-card figcaption {
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 11px;
+      background: #fffdfa;
+    }
+
+    main {
+      padding: 0 14px;
+    }
+
+    section {
+      padding: 20px 0 4px;
+      scroll-margin-top: 60px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 12px;
+      font-size: 21px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h2::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      border-radius: 4px;
+      background: var(--clay);
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      line-height: 1.36;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .section-note {
+      margin: -4px 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+      border: 1px solid rgba(36, 77, 61, 0.13);
+      border-radius: 8px;
+      padding: 13px;
+      background: rgba(255, 253, 250, 0.92);
+      box-shadow: 0 8px 22px rgba(23, 35, 31, 0.05);
+    }
+
+    .card.green { border-top: 4px solid var(--green); }
+    .card.teal { border-top: 4px solid var(--teal); }
+    .card.clay { border-top: 4px solid var(--clay); }
+    .card.gold { border-top: 4px solid var(--gold); }
+    .card.blue { border-top: 4px solid var(--blue); }
+    .card.rose { border-top: 4px solid var(--rose); }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      color: #254d52;
+      background: rgba(50, 119, 128, 0.1);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .notice {
+      border-left: 4px solid var(--clay);
+      border-radius: 8px;
+      padding: 12px;
+      background: rgba(182, 99, 59, 0.09);
+      font-size: 13px;
+    }
+
+    .todo {
+      display: grid;
+      gap: 10px;
+    }
+
+    .todo-item {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(36, 77, 61, 0.2);
+    }
+
+    .todo-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      min-height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .todo-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .days {
+      display: grid;
+      gap: 12px;
+    }
+
+    .day-card {
+      overflow: hidden;
+      border: 1px solid rgba(36, 77, 61, 0.14);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.94);
+      box-shadow: 0 10px 24px rgba(23, 35, 31, 0.06);
+    }
+
+    .day-head {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 10px;
+      align-items: stretch;
+      padding: 12px;
+      background: rgba(36, 77, 61, 0.05);
+    }
+
+    .date {
+      display: grid;
+      align-content: center;
+      min-height: 70px;
+      border-radius: 8px;
+      padding: 8px;
+      color: #fff;
+      background: var(--ink);
+      text-align: center;
+    }
+
+    .date strong {
+      font-size: 19px;
+      line-height: 1.05;
+    }
+
+    .date span {
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 11px;
+    }
+
+    .day-head h3 {
+      margin-top: 1px;
+    }
+
+    .route {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .schedule {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0 12px 12px;
+      list-style: none;
+    }
+
+    .schedule li {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 10px;
+      padding: 9px 0;
+      border-top: 1px dashed rgba(36, 77, 61, 0.2);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .schedule time {
+      color: var(--clay);
+      font-weight: 800;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 0 12px 12px;
+    }
+
+    .tag {
+      min-height: 24px;
+      padding: 3px 7px;
+      border-radius: 8px;
+      color: #254d52;
+      background: rgba(50, 119, 128, 0.09);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    details {
+      border: 1px solid rgba(36, 77, 61, 0.14);
+      border-radius: 8px;
+      background: rgba(255, 253, 250, 0.92);
+      box-shadow: 0 8px 20px rgba(23, 35, 31, 0.04);
+    }
+
+    details + details {
+      margin-top: 10px;
+    }
+
+    summary {
+      display: flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      color: var(--teal);
+      background: rgba(50, 119, 128, 0.1);
+      text-align: center;
+      line-height: 24px;
+      font-size: 18px;
+    }
+
+    details[open] summary::after {
+      content: "-";
+    }
+
+    .detail-body {
+      padding: 0 12px 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      top: 0.78em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 10px;
+      padding: 9px 0;
+      border-top: 1px dashed rgba(36, 77, 61, 0.2);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .row:first-child {
+      border-top: 0;
+    }
+
+    .row strong {
+      color: var(--ink);
+    }
+
+    .food-card h3,
+    .gift-card h3,
+    .risk-card h3 {
+      color: var(--ink);
+    }
+
+    .source-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .source-list a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .final-note {
+      margin-top: 12px;
+      padding: 13px;
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.88);
+      background: var(--ink);
+      font-size: 13px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 30;
+      padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+      border-top: 1px solid rgba(36, 77, 61, 0.14);
+      background: rgba(255, 253, 250, 0.94);
+      backdrop-filter: blur(18px);
+    }
+
+    .bottom-nav-inner {
+      display: grid;
+      width: min(100%, 480px);
+      margin: 0 auto;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .bottom-nav a {
+      display: flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: var(--muted);
+      background: rgba(33, 79, 61, 0.06);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bottom-nav a:focus,
+    .bottom-nav a:hover {
+      color: #fff;
+      background: var(--green);
+    }
+
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 27px;
+      }
+
+      .hero-actions,
+      .stats,
+      .day-head,
+      .todo-item,
+      .schedule li,
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .date {
+        min-height: auto;
+        text-align: left;
+      }
+
+      .bottom-nav-inner {
+        gap: 4px;
+      }
+
+      .bottom-nav a {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="top">
+      <div class="top-inner">
+        <div class="brand">
+          <strong>云南 + 广东移动行程</strong>
+          <span>6.14 深圳出发，6.25 回家</span>
+        </div>
+        <a class="desktop-link" href="yunnan-guangdong-itinerary.html">桌面版</a>
+      </div>
+    </div>
+
+    <header id="top">
+      <span class="kicker">2026 年 6 月｜单人预算约 5,000 元</span>
+      <h1>大理、丽江、香格里拉，再接广州和清远漂流</h1>
+      <p class="lede">按最新安排重排成移动端执行版：6 月 15 日中午到大理后先去喜洲，晚上回古城；6 月 16 日走洱海，黄昏去丽江；6 月 17 日留给丽江拍写真。6 月 22 日晚飞广州，6 月 23 日住广州，6 月 24 日去清远，6 月 25 日回家。</p>
+      <div class="hero-actions">
+        <a class="action primary" href="#daily">看每日路线</a>
+        <a class="action secondary" href="#todo">看待补预订</a>
+      </div>
+      <figure class="route-card">
+        <img src="route-poster.png" alt="深圳、昆明、大理、丽江、香格里拉、广州、清远路线示意图">
+        <figcaption>路线：深圳 - 昆明 - 大理 - 丽江 - 香格里拉 - 昆明 - 广州 - 清远 - 回家。</figcaption>
+      </figure>
+    </header>
+
+    <main>
+      <section id="overview">
+        <h2>总览</h2>
+        <div class="grid stats">
+          <div class="card green stat">
+            <strong>12 个自然日</strong>
+            <span>6.14 夜航出发，6.25 回家。</span>
+          </div>
+          <div class="card teal stat">
+            <strong>7 天云南段</strong>
+            <span>6.15 到 6.21 实玩和转场，6.22 昆明缓冲。</span>
+          </div>
+          <div class="card clay stat">
+            <strong>大理拆两段</strong>
+            <span>6.15 喜洲 + 古城，6.16 洱海 + 黄昏去丽江。</span>
+          </div>
+          <div class="card gold stat">
+            <strong>6.22 晚航班</strong>
+            <span>6.21 住昆明，避免从香格里拉长距离赶机。</span>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">已订 6.14 深圳飞昆明</span>
+          <span class="chip">已订 6.15 大理民宿</span>
+          <span class="chip">已订 6.22 昆明飞广州</span>
+          <span class="chip">6.17 丽江写真</span>
+          <span class="chip">6.25 回家</span>
+        </div>
+        <div class="notice" style="margin-top:12px;">
+          路线原则：6.15 先喜洲后古城，6.16 白天洱海、黄昏去丽江，6.17 留给写真；香格里拉大经幡放白天或傍晚前拍照，夜间只轻逛独克宗和龟山转经筒；广东段按 6.23 广州、6.24 清远、6.25 回家执行。
+        </div>
+      </section>
+
+      <section id="todo">
+        <h2>待补预订</h2>
+        <div class="card todo">
+          <div class="todo-item">
+            <span class="badge">已订</span>
+            <div>
+              <h3>现有航班锁定大框架</h3>
+              <p>6.14 23:00 深圳飞昆明；6.15 住大理民宿；6.22 晚昆明飞广州，22 日住广州。</p>
+            </div>
+          </div>
+          <div class="todo-item">
+            <span class="badge">优先补</span>
+            <div>
+              <h3>6.16 丽江住宿 + 6.17 写真档期</h3>
+              <p>6.16 黄昏到丽江后住丽江，6.17 写真提前确认店铺、妆造、拍摄时段和选片方式。</p>
+            </div>
+          </div>
+          <div class="todo-item">
+            <span class="badge">交通</span>
+            <div>
+              <h3>补齐云南内转场</h3>
+              <p>昆明到大理、大理到丽江、丽江到香格里拉、香格里拉到昆明，车次以 12306 为准。</p>
+            </div>
+          </div>
+          <div class="todo-item">
+            <span class="badge">6.10 前后</span>
+            <div>
+              <h3>复核雪山、普达措、写真和清远</h3>
+              <p>玉龙雪山索道受天气影响大；6.23 住广州休整，6.24 再过清远。</p>
+            </div>
+          </div>
+          <div class="todo-item">
+            <span class="badge">6.20-6.24</span>
+            <div>
+              <h3>确认古龙峡漂流票型</h3>
+              <p>6.24 到清远住下，6.25 轻装漂流；套票和出票时间以官方当天规则为准。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="daily">
+        <h2>每日路线</h2>
+        <div class="days">
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.14</strong><span>周日</span></div>
+              <div>
+                <div class="route">深圳 - 昆明</div>
+                <h3>23:00 飞昆明，今晚只处理休息</h3>
+                <p class="section-note">落地大概率已是 6.15 凌晨，按红眼航班处理。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>20:30</time><span>到深圳机场，晚餐提前吃，过安检后只补水和少量零食。</span></li>
+              <li><time>23:00</time><span>深圳飞昆明。</span></li>
+              <li><time>落地后</time><span>优先机场附近钟点房或过渡酒店休息 4 到 6 小时，不凌晨硬熬去大理。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">新增过渡休息</span><span class="tag">不算景点日</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.15</strong><span>周一</span></div>
+              <div>
+                <div class="route">昆明 - 大理</div>
+                <h3>中午到大理后先去喜洲，晚上回古城</h3>
+                <p class="section-note">当天不环海，先把喜洲和古城走稳。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>08:30</time><span>从昆明机场或酒店去车站，动车到大理，尽量上午到中午抵达。</span></li>
+              <li><time>12:00</time><span>到大理后寄存行李，简单午餐，联系已订民宿确认入住。</span></li>
+              <li><time>13:30</time><span>去喜洲，走古镇主街、稻田和严家大院周边，喜洲粑粑只当小吃。</span></li>
+              <li><time>17:30</time><span>回大理古城，入住民宿。</span></li>
+              <li><time>晚上</time><span>古城南门、五华楼、人民路轻逛，晚餐后早休息。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">已订大理民宿</span><span class="tag">喜洲优先</span><span class="tag">预算 ¥280-460</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.16</strong><span>周二</span></div>
+              <div>
+                <div class="route">大理 - 丽江</div>
+                <h3>洱海白天走，黄昏过丽江</h3>
+                <p class="section-note">不强行把双廊也塞进同一天。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>08:30</time><span>古城出发去龙龛或才村，步行或短骑洱海生态廊道。</span></li>
+              <li><time>11:30</time><span>午餐放洱海西线或古城外侧，避开临湖高价套餐。</span></li>
+              <li><time>14:00</time><span>按体力补周城扎染、海舌周边或洱海咖啡，只选一到两个点。</span></li>
+              <li><time>17:30</time><span>回民宿取行李，黄昏或傍晚动车/汽车去丽江。</span></li>
+              <li><time>晚上</time><span>入住丽江，确认 6.17 写真集合时间。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">白天洱海</span><span class="tag">黄昏过丽江</span><span class="tag">预算 ¥420-680</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.17</strong><span>周三</span></div>
+              <div>
+                <div class="route">丽江写真</div>
+                <h3>整天留给拍写真，晚上只轻逛</h3>
+                <p class="section-note">选衣、妆造、拍摄和选片都需要完整时间。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>上午</time><span>到店选衣、妆造、沟通风格和拍摄路线；早餐吃清淡。</span></li>
+              <li><time>中午</time><span>拍摄间隙补简餐和热水，不安排远距离景点。</span></li>
+              <li><time>下午</time><span>完成古城、束河、白沙或外景拍摄，以写真店实际路线为准。</span></li>
+              <li><time>晚上</time><span>确认选片和精修交付方式，准备 6.18 玉龙雪山衣物。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住丽江</span><span class="tag">写真优先</span><span class="tag">预算 ¥500-1,200</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.18</strong><span>周四</span></div>
+              <div>
+                <div class="route">玉龙雪山</div>
+                <h3>雪山放早上，下午蓝月谷或白沙古镇</h3>
+                <p class="section-note">大索道看天气和票，不作为必达项目。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>07:00</time><span>出发去玉龙雪山，门票、观光车和索道以官方实时规则为准。</span></li>
+              <li><time>09:00</time><span>若大索道天气和票都合适再上；预算优先选云杉坪和蓝月谷。</span></li>
+              <li><time>13:30</time><span>蓝月谷轻走，不长时间淋雨或涉水拍照。</span></li>
+              <li><time>16:30</time><span>回丽江休息；索道因风停运则改白沙、束河、黑龙潭。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住丽江第二晚</span><span class="tag">高反谨慎</span><span class="tag">预算 ¥300-650</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.19</strong><span>周五</span></div>
+              <div>
+                <div class="route">丽江 - 香格里拉</div>
+                <h3>端午第一天上高原，下午只排轻项目</h3>
+                <p class="section-note">海拔上来后先观察身体状态。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>09:00</time><span>丽江动车或汽车去香格里拉，到站先入住独克宗外侧或月光广场附近。</span></li>
+              <li><time>14:30</time><span>身体状态好就轻量选纳帕海短线或松赞林寺外观；头痛明显就取消景点。</span></li>
+              <li><time>16:30</time><span>天气和体力都合适时去大经幡、月光广场和龟山周边，利用白天到傍晚前的光线拍照。</span></li>
+              <li><time>18:30</time><span>牦牛肉火锅或藏式简餐，少喝酒；晚上只走独克宗、月光广场和龟山转经筒。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住香格里拉</span><span class="tag">大经幡</span><span class="tag">预算 ¥330-560</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.20</strong><span>周六</span></div>
+              <div>
+                <div class="route">普达措</div>
+                <h3>普达措国家公园，早进早出</h3>
+                <p class="section-note">6 月可能下雨，穿防滑鞋并缩短步道。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>08:00</time><span>普达措官网公示开园 08:00、闭园 16:30，门票 ¥138。</span></li>
+              <li><time>09:00</time><span>属都湖、碧塔海步道按体力取舍。</span></li>
+              <li><time>14:30</time><span>返程回市区，不叠加虎跳峡或梅里雪山。</span></li>
+              <li><time>晚上</time><span>独克宗古城吃藏餐，补水，早点休息。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住香格里拉第二晚</span><span class="tag">预算 ¥300-480</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.21</strong><span>周日</span></div>
+              <div>
+                <div class="route">香格里拉 - 昆明</div>
+                <h3>上午补大经幡或纳帕海，下午回昆明住下</h3>
+                <p class="section-note">这晚住昆明，是为了 6.22 晚航班留缓冲。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>09:00</time><span>若 6.19 没拍成大经幡，上午先补大经幡和月光广场；若已完成，则走纳帕海短线，不再塞完整松赞林寺。</span></li>
+              <li><time>12:30</time><span>午餐后取行李，经丽江回昆明，具体车次以 12306 为准。</span></li>
+              <li><time>晚上</time><span>住昆明站、塘子巷或机场线沿线。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住昆明</span><span class="tag">预算 ¥420-700</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.22</strong><span>周一</span></div>
+              <div>
+                <div class="route">昆明 - 广州</div>
+                <h3>白天昆明缓冲，晚上飞广州</h3>
+                <p class="section-note">晚航班当天不排远景点。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>上午</time><span>睡到自然醒，翠湖、陆军讲武堂、南强街轻走，或只在酒店附近休整。</span></li>
+              <li><time>下午</time><span>提前去机场，晚餐在机场或登机前解决。</span></li>
+              <li><time>晚上</time><span>昆明飞广州，抵达后入住广州。建议选越秀、天河、公园前、体育西、广州东或去清远交通方便的区域。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">已订晚航班</span><span class="tag">住广州</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.23</strong><span>周二</span></div>
+              <div>
+                <div class="route">广州</div>
+                <h3>广州住一晚，恢复体力和整理行李</h3>
+                <p class="section-note">这天不排重体力项目。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>上午</time><span>睡到自然醒，广州早茶或简餐，处理洗衣、补给、防水袋和涉水鞋。</span></li>
+              <li><time>下午</time><span>永庆坊、沙面、北京路或酒店附近商圈三选一。</span></li>
+              <li><time>晚上</time><span>继续住广州，提前确认 6.24 去清远的交通时间。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住广州</span><span class="tag">休整补给</span><span class="tag">预算 ¥260-520</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.24</strong><span>周三</span></div>
+              <div>
+                <div class="route">广州 - 清远</div>
+                <h3>过清远住下，漂流前先踩稳节奏</h3>
+                <p class="section-note">先转场和休整，第二天轻装漂流。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>上午</time><span>广州出发去清远，优先选少换乘路线，到站后先寄存行李。</span></li>
+              <li><time>中午</time><span>清远午餐，点清淡一些，别在漂流前喝酒或吃太撑。</span></li>
+              <li><time>下午</time><span>北江边、太和古洞、飞霞山或酒店休整，确认次日票型和取票时间。</span></li>
+              <li><time>晚上</time><span>住清远，准备防水袋、涉水鞋、换洗衣物和毛巾。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">住清远</span><span class="tag">漂流前缓冲</span><span class="tag">预算 ¥260-520</span></div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-head">
+              <div class="date"><strong>6.25</strong><span>周四</span></div>
+              <div>
+                <div class="route">清远漂流 - 回家</div>
+                <h3>上午确认水情，午后漂流，傍晚回家</h3>
+                <p class="section-note">雷雨或水情不稳就改飞霞山或城市休整。</p>
+              </div>
+            </div>
+            <ul class="schedule">
+              <li><time>09:00</time><span>按天气和水情确认古龙峡或黄腾峡票型；也可先走瀑布群/玻璃平台。</span></li>
+              <li><time>12:00</time><span>简餐、寄存行李，提前处理出票和入园。</span></li>
+              <li><time>13:30</time><span>漂流。手机、证件、现金双层防水，不穿拖鞋。</span></li>
+              <li><time>17:00</time><span>洗澡换衣，去清远站、广州北或广州南，晚上回家。</span></li>
+            </ul>
+            <div class="tags"><span class="tag">回家日</span><span class="tag">午后漂流更稳</span><span class="tag">预算 ¥450-750</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="stay">
+        <h2>住宿</h2>
+        <p class="section-note">手机端把桌面表格改成可折叠卡片，优先看区域和避坑。</p>
+        <details open>
+          <summary>昆明过渡｜6.15 凌晨</summary>
+          <div class="detail-body">
+            <div class="row"><strong>区域</strong><span>长水机场附近、机场巴士或地铁方便处。</span></div>
+            <div class="row"><strong>预算</strong><span>¥80-180，钟点房或过渡房。</span></div>
+            <div class="row"><strong>理由</strong><span>落地后先睡 4 到 6 小时，不为了省一晚硬熬到中午。</span></div>
+          </div>
+        </details>
+        <details>
+          <summary>大理｜6.15 已订</summary>
+          <div class="detail-body">
+            <div class="row"><strong>区域</strong><span>已订民宿附近、古城东/南门外侧、才村或龙龛方向。</span></div>
+            <div class="row"><strong>预算</strong><span>¥130-220/晚。</span></div>
+            <div class="row"><strong>避坑</strong><span>6.15 住大理，6.16 白天洱海后取行李去丽江；不建议为了景观临时换住双廊。</span></div>
+          </div>
+        </details>
+        <details>
+          <summary>丽江｜6.16-6.18</summary>
+          <div class="detail-body">
+            <div class="row"><strong>区域</strong><span>古城北门、束河、黑龙潭附近。</span></div>
+            <div class="row"><strong>预算</strong><span>¥130-220/晚。</span></div>
+            <div class="row"><strong>避坑</strong><span>连续住三晚，方便 6.17 写真和 6.18 玉龙雪山接送；避开四方街、酒吧街核心。</span></div>
+          </div>
+        </details>
+        <details>
+          <summary>香格里拉｜6.19-6.20</summary>
+          <div class="detail-body">
+            <div class="row"><strong>区域</strong><span>独克宗古城外侧、月光广场附近。</span></div>
+            <div class="row"><strong>预算</strong><span>¥140-260/晚。</span></div>
+            <div class="row"><strong>避坑</strong><span>优先选供暖、热水稳定、低楼层或有电梯的酒店，端午越早订越稳。</span></div>
+          </div>
+        </details>
+        <details>
+          <summary>昆明、广州、清远｜后段转场</summary>
+          <div class="detail-body">
+            <div class="row"><strong>昆明</strong><span>6.21 住昆明站、塘子巷、机场线沿线，预算 ¥160-260/晚。</span></div>
+            <div class="row"><strong>广州</strong><span>6.22-6.23 住越秀、天河、公园前、体育西、广州东或去清远交通方便处，预算 ¥220-380/晚。</span></div>
+            <div class="row"><strong>清远</strong><span>6.24 住清新区、古龙峡周边或清远站与景区之间，预算 ¥150-280/晚。</span></div>
+          </div>
+        </details>
+      </section>
+
+      <section id="food">
+        <h2>吃饭</h2>
+        <div class="grid">
+          <div class="card green food-card">
+            <h3>大理：轻吃，别被喜洲排队绑架</h3>
+            <p>正餐放古城外侧或喜洲非主街。喜洲粑粑只买现烤小份，网红店排队超过 20 分钟就换。</p>
+            <div class="row"><strong>早餐</strong><span>饵丝/米线 + 豆浆，¥15-25。</span></div>
+            <div class="row"><strong>晚餐</strong><span>酸辣鱼、菌汤、白族小炒，单人点 1 荤 1 素菜更稳。</span></div>
+          </div>
+          <div class="card teal food-card">
+            <h3>丽江：束河吃饭，古城少买小吃</h3>
+            <p>古城核心区适合散步，不适合把每顿饭都压在那里。束河和古城北门附近更适合坐下来吃。</p>
+            <div class="row"><strong>必试</strong><span>腊排骨火锅、鸡豆凉粉、纳西烤鱼，2 人以上更划算。</span></div>
+            <div class="row"><strong>避开</strong><span>无价目表烧烤、强推牦牛肉干、高价水果切盘。</span></div>
+          </div>
+          <div class="card clay food-card">
+            <h3>香格里拉：火锅别天天吃</h3>
+            <p>牦牛火锅安排一顿即可，另外用青稞饼、牦牛酸奶、土鸡汤、藏式简餐过渡。</p>
+            <div class="row"><strong>早餐</strong><span>青稞饼、米线、热牛奶或甜茶，先暖胃。</span></div>
+            <div class="row"><strong>避开</strong><span>古城内无明码牦牛肉、过度推销藏药材和高价菌菇。</span></div>
+          </div>
+          <div class="card blue food-card">
+            <h3>广州：早茶和轻量正餐</h3>
+            <p>6.23 用来恢复体力和补给。早茶别点太多，下午只做永庆坊、沙面、北京路或酒店附近商圈三选一。</p>
+          </div>
+          <div class="card gold food-card">
+            <h3>清远：漂流前清淡，漂完再吃鸡</h3>
+            <p>6.24 晚可以吃清远鸡或洲心烧肉，6.25 漂流前只吃简餐，不在景区门口被拉客店带走。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gifts">
+        <h2>特产文创</h2>
+        <p class="section-note">按 2kg 以内、¥200-350 总额控制，前段买文创，后段买食品。</p>
+        <div class="grid">
+          <div class="card gold gift-card">
+            <h3>适合买</h3>
+            <ul class="list">
+              <li>大理扎染小方巾、杯垫、帆布袋。</li>
+              <li>云南咖啡挂耳、鲜花饼小盒装、普洱茶小饼。</li>
+              <li>东巴文字冰箱贴、明信片、手账贴纸、广州小文创。</li>
+            </ul>
+          </div>
+          <div class="card rose gift-card">
+            <h3>谨慎买</h3>
+            <ul class="list">
+              <li>银器、玉石、药材、藏红花等高单价商品，不懂就不买。</li>
+              <li>鲜花饼现烤大盒装重且保质期短，不适合前段早买。</li>
+              <li>散装茶叶、干蘑菇包先看明码标价、克重和生产信息。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="risks">
+        <h2>避坑</h2>
+        <div class="grid">
+          <div class="card clay risk-card">
+            <h3>官方硬约束</h3>
+            <ul class="list">
+              <li>2026 年端午节为 6 月 19 日至 21 日，香格里拉住宿和回昆明车票要提前订。</li>
+              <li>玉龙雪山索道受大风等天气影响可能停运，别把大索道当必达项目。</li>
+              <li>普达措闭园 16:30，下午出发会很被动。</li>
+              <li>古龙峡套票和出票时间以官方当天规则为准，漂流前先处理票务和寄存。</li>
+            </ul>
+          </div>
+          <div class="card teal risk-card">
+            <h3>体验提醒</h3>
+            <ul class="list">
+              <li>低价团、包车、旅拍、银器玉石消费争议多，单人不要临时跟陌生拼团。</li>
+              <li>大经幡是光线型拍照点，白天或傍晚前更出片；夜间更适合独克宗和转经筒轻逛。</li>
+              <li>大理/丽江伴手礼避雷热度高，银器、玉石、散装菌菇、药材、藏红花都不要冲动买。</li>
+              <li>6.23 住广州是恢复日，不要临时塞入重体力排队项目。</li>
+              <li>清远漂流重点看票型、排队、防水、鞋子和周边吃饭拉客。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="pack">
+        <h2>清单</h2>
+        <details open>
+          <summary>证件和票务</summary>
+          <div class="detail-body">
+            <ul class="list">
+              <li>身份证、少量现金、充电宝。</li>
+              <li>航班、铁路、酒店、景区票截图离线保存。</li>
+              <li>玉龙雪山和普达措当天看天气再决定是否升级项目。</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>衣物</summary>
+          <div class="detail-body">
+            <ul class="list">
+              <li>薄外套、速干长裤、防晒帽、墨镜。</li>
+              <li>香格里拉早晚冷，带轻羽绒或抓绒。</li>
+              <li>清远漂流单独准备换洗衣物、涉水鞋、毛巾。</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>健康和防护</summary>
+          <div class="detail-body">
+            <ul class="list">
+              <li>高原段少饮酒，第一晚到香格里拉不洗太久热水澡。</li>
+              <li>防晒霜、雨衣、防水袋、肠胃药、晕车药。</li>
+              <li>漂流当天手机和证件双层防水，眼镜加防丢绳。</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>来源</h2>
+        <div class="card">
+          <p class="section-note">检索日期：2026 年 5 月 25 日。官方资料用于日期、票务、开放时间和天气判断；小红书仅作为近期游客体验和避坑参考。</p>
+          <ul class="source-list">
+            <li><a href="https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm" target="_blank" rel="noopener">中国政府网：2026 年部分节假日安排</a></li>
+            <li><a href="https://www.lijiang.cn/article/172717.html" target="_blank" rel="noopener">丽江网：玉龙雪山景区票务公告</a></li>
+            <li><a href="https://www.pdcuo.cn/" target="_blank" rel="noopener">普达措国家公园官网</a></li>
+            <li><a href="https://www.gulongxia.com/" target="_blank" rel="noopener">清远古龙峡官网</a></li>
+            <li><a href="https://www.weather.com.cn/yunnan/tqyw/05/4641222.shtml" target="_blank" rel="noopener">中国天气网云南站气候预测</a></li>
+            <li><a href="https://www.12306.cn/" target="_blank" rel="noopener">中国铁路 12306</a></li>
+            <li>小红书补充检索：香格里拉 大经幡 白天 拍照；香格里拉 大经幡 晚上 独克宗；普达措 6月 端午 攻略 避坑；丽江 写真 时间 妆造 外景；清远 漂流 6月 下午 雷雨 排队。</li>
+          </ul>
+        </div>
+        <div class="final-note">
+          最终执行提醒：6 月 10 日以后再复核天气、6.17 丽江写真档期、玉龙雪山索道状态、古龙峡或黄腾峡当天水情。若遇连续强降雨，6.18 改丽江古城/白沙，6.20 普达措缩短步道，6.25 漂流改瀑布群加飞霞山。
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="移动端快捷导航">
+    <div class="bottom-nav-inner">
+      <a href="#overview">总览</a>
+      <a href="#todo">预订</a>
+      <a href="#daily">路线</a>
+      <a href="#stay">住宿</a>
+      <a href="#risks">避坑</a>
+    </div>
+  </nav>
+</body>
+</html>
