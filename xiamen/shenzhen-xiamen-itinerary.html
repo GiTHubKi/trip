@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深圳到厦门端午 4 天 3 晚行程</title>
+  <style>
+    :root {
+      --ink: #14211d;
+      --muted: #5d6966;
+      --paper: #fffdf8;
+      --mist: #edf4f1;
+      --line: #d8e2df;
+      --sea: #1f6f78;
+      --leaf: #2f6b4f;
+      --coral: #be5b45;
+      --gold: #c68a2e;
+      --plum: #7d4b66;
+      --blue: #315f8f;
+      --shadow: 0 18px 44px rgba(20, 33, 29, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: #f2f0ea;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0;
+      overflow-x: hidden;
+      background:
+        linear-gradient(140deg, rgba(237, 244, 241, 0.95), rgba(255, 249, 239, 0.96) 42%, rgba(245, 235, 225, 0.88)),
+        #f4f1eb;
+    }
+
+    a {
+      color: var(--sea);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(31, 111, 120, 0.16);
+      background: rgba(255, 253, 248, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .nav a:hover {
+      background: rgba(31, 111, 120, 0.1);
+      text-decoration: none;
+    }
+
+    .nav .view-switch {
+      margin-left: auto;
+      border: 1px solid rgba(31, 111, 120, 0.24);
+      background: rgba(31, 111, 120, 0.1);
+      color: var(--sea);
+      font-weight: 800;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 20px 14px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero > *,
+    .grid > *,
+    .quick > *,
+    .image-grid > *,
+    .photo-stack > *,
+    .timeline > * {
+      min-width: 0;
+    }
+
+    .hero-copy {
+      padding: 14px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--coral);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      line-break: anywhere;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .lede {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-img {
+      margin: 0;
+      min-height: 390px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #dfe9e6;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .quick {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .quick-item {
+      border-left: 4px solid var(--sea);
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: rgba(255, 253, 248, 0.82);
+      box-shadow: 0 8px 22px rgba(20, 33, 29, 0.05);
+    }
+
+    .quick-item:nth-child(2) { border-left-color: var(--leaf); }
+    .quick-item:nth-child(3) { border-left-color: var(--gold); }
+    .quick-item:nth-child(4) { border-left-color: var(--plum); }
+
+    .quick-item strong {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .quick-item span {
+      display: block;
+      margin-top: 3px;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px 54px;
+    }
+
+    section {
+      padding: 34px 0 12px;
+      scroll-margin-top: 72px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 12px; }
+
+    p,
+    li,
+    td,
+    th,
+    .card,
+    .quick-item {
+      overflow-wrap: anywhere;
+    }
+
+    .section-lead {
+      max-width: 860px;
+      margin: -8px 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid rgba(20, 33, 29, 0.12);
+      border-radius: 8px;
+      padding: 18px;
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: 0 10px 28px rgba(20, 33, 29, 0.05);
+    }
+
+    .accent-sea { border-top: 4px solid var(--sea); }
+    .accent-leaf { border-top: 4px solid var(--leaf); }
+    .accent-coral { border-top: 4px solid var(--coral); }
+    .accent-gold { border-top: 4px solid var(--gold); }
+    .accent-plum { border-top: 4px solid var(--plum); }
+    .accent-blue { border-top: 4px solid var(--blue); }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid rgba(31, 111, 120, 0.2);
+      border-radius: 999px;
+      background: rgba(31, 111, 120, 0.08);
+      color: #164f56;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: rgba(252, 242, 218, 0.82);
+      color: #5b4520;
+    }
+
+    .important {
+      border-left-color: var(--coral);
+      background: rgba(190, 91, 69, 0.09);
+      color: #65362c;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 16px;
+      border: 1px solid rgba(20, 33, 29, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: 0 10px 28px rgba(20, 33, 29, 0.05);
+      overflow: hidden;
+    }
+
+    .day-head {
+      padding: 18px;
+      color: #fffdf8;
+      background: linear-gradient(160deg, var(--sea), #244b57);
+    }
+
+    .day:nth-child(2) .day-head { background: linear-gradient(160deg, var(--leaf), #315943); }
+    .day:nth-child(3) .day-head { background: linear-gradient(160deg, var(--coral), #8f4638); }
+    .day:nth-child(4) .day-head { background: linear-gradient(160deg, var(--plum), #51354b); }
+
+    .day-head strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .day-head span {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      opacity: 0.86;
+    }
+
+    .day-body {
+      padding: 16px 18px 18px;
+    }
+
+    .slot {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(20, 33, 29, 0.1);
+    }
+
+    .slot:last-child { border-bottom: 0; }
+
+    .slot-time {
+      color: var(--sea);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .slot p {
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li { margin: 5px 0; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(20, 33, 29, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.9);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 12px 13px;
+      border-bottom: 1px solid rgba(20, 33, 29, 0.1);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #fffdf8;
+      background: #274d53;
+      font-weight: 800;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+
+    figure.photo {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e9efed;
+      box-shadow: var(--shadow);
+    }
+
+    figure.photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      display: block;
+      object-fit: cover;
+    }
+
+    figure.photo figcaption {
+      padding: 8px 11px;
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(255, 253, 248, 0.96);
+    }
+
+    .photo-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .source-list a {
+      word-break: break-word;
+    }
+
+    .checklist {
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .checklist li {
+      break-inside: avoid;
+      margin: 0 0 9px;
+    }
+
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 20px 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .image-grid,
+      .cols-2,
+      .cols-3,
+      .cols-4,
+      .quick {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-img,
+      .hero-img img {
+        min-height: 270px;
+      }
+
+      .day {
+        grid-template-columns: 1fr;
+      }
+
+      .day-head {
+        padding: 15px 18px;
+      }
+
+      .slot {
+        grid-template-columns: 82px minmax(0, 1fr);
+      }
+
+      .checklist {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header,
+      main,
+      footer {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .nav {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .nav .view-switch {
+        margin-left: 0;
+      }
+
+      h1 {
+        font-size: 28px;
+        line-height: 1.12;
+        word-break: break-all;
+      }
+
+      .lede {
+        font-size: 16px;
+        line-height: 1.68;
+        word-break: break-all;
+      }
+
+      .tag-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tag {
+        justify-content: center;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+
+      .card,
+      .day-body {
+        padding: 15px;
+      }
+
+      .slot {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      table {
+        min-width: 0;
+        table-layout: fixed;
+        word-break: break-all;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav" aria-label="页面导航">
+      <a href="#overview">概览</a>
+      <a href="#booking">预订</a>
+      <a href="#daily">每日路线</a>
+      <a href="#stay">住宿</a>
+      <a href="#food">美食</a>
+      <a href="#gifts">伴手礼</a>
+      <a href="#pitfalls">避坑</a>
+      <a href="#checklist">清单</a>
+      <a href="#sources">来源</a>
+      <a class="view-switch" href="shenzhen-xiamen-itinerary-mobile.html">移动版</a>
+    </nav>
+  </div>
+
+  <header>
+    <div class="hero">
+      <div class="hero-copy">
+        <p class="kicker">深圳出发 · 厦门端午 4 天 3 晚</p>
+        <h1><span>下班后出发</span><span>把鼓浪屿和海边</span><span>留给清晨与傍晚</span></h1>
+        <p class="lede">日期为 2026 年 6 月 18 日晚至 6 月 21 日。住宿已固定在中山路步行街附近，所以路线以“中山路为基地、早抢船票、午后休息、雨天可替换”为原则。</p>
+        <div class="tag-row">
+          <span class="tag">端午假期高峰</span>
+          <span class="tag">中山路住 3 晚</span>
+          <span class="tag">鼓浪屿早进早出</span>
+          <span class="tag">6 月雷阵雨备选</span>
+        </div>
+      </div>
+      <figure class="hero-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gulangyu_Island_from_Zhongshan_Road%2C_Xiamen.jpg" alt="从中山路方向远眺鼓浪屿">
+      </figure>
+    </div>
+
+    <div class="quick" aria-label="行程速览">
+      <div class="quick-item">
+        <strong>出行日期</strong>
+        <span>6/18 晚到 6/21</span>
+      </div>
+      <div class="quick-item">
+        <strong>住宿基地</strong>
+        <span>中山路步行街附近</span>
+      </div>
+      <div class="quick-item">
+        <strong>预算提示</strong>
+        <span>不含酒店约 1100-2300 元/人</span>
+      </div>
+      <div class="quick-item">
+        <strong>核心风险</strong>
+        <span>返程票、船票、雷阵雨</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <h2>概览</h2>
+      <p class="section-lead">这不是“打卡越多越值”的路线。端午假期、6 月湿热和中山路住宿三个条件叠加后，最稳的做法是把高风险项目前置，把中午留给休息，把最后一天留给返程缓冲。</p>
+      <div class="grid cols-3">
+        <article class="card accent-sea">
+          <h3>路线原则</h3>
+          <p>6 月 19 日早上上鼓浪屿，避开正午和下午返程高峰；6 月 20 日放植物园、南普陀、沙坡尾、曾厝垵和环岛路；6 月 21 日只安排中山路、八市和轻量城市漫步。</p>
+        </article>
+        <article class="card accent-coral">
+          <h3>端午判断</h3>
+          <p>2026 年端午假期为 6 月 19 日至 21 日，正好覆盖完整旅行。6 月 18 日晚和 6 月 21 日下午到晚上是交通压力最大窗口。</p>
+        </article>
+        <article class="card accent-gold">
+          <h3>天气策略</h3>
+          <p>6 月厦门湿热，雷暴多发时段集中在 5-8 月。海岛、植物园、海边放清晨或傍晚；下午准备科技馆、咖啡、商圈或博物馆替代。</p>
+        </article>
+      </div>
+
+      <div class="image-grid">
+        <figure class="photo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Panorama_of_Zhongshan_Road%2C_Xiamen.jpg" alt="厦门中山路骑楼街景">
+          <figcaption>中山路适合夜间低强度散步和补给，不建议把住宿区当作全天重头景点。</figcaption>
+        </figure>
+        <div class="photo-stack">
+          <figure class="photo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Photo_taken_in_the_%22Rainforest%22_area_of_Xiamen_Botanical_Garden%2C_depicting_artificially_sprayed_mist_across_water.jpg" alt="厦门植物园雨林世界雾气">
+            <figcaption>植物园雨林世界、多肉区适合上午拍照，正午会热。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <h2>预订时间线</h2>
+      <p class="section-lead">优先级从高到低：返程高铁、去程高铁、鼓浪屿早班船、预约类景点。第三方平台只作为提醒，不替代官方确认。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>要做的事</th>
+              <th>建议</th>
+              <th>风险</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6 月 4 日</td>
+              <td>抢 6 月 18 日深圳到厦门高铁</td>
+              <td>优先深圳北到厦门北/厦门，目标 18:30-20:20 出发；下班不确定就候补一早一晚两个车次。</td>
+              <td>端午前夜，晚间好时段容易候补。</td>
+            </tr>
+            <tr>
+              <td>6 月 5 日前后</td>
+              <td>关注鼓浪屿 6 月 19 日船票</td>
+              <td>官方规则为船票预售期 15 天（含当日）、每日 9:00 开放购买第 15 日船票；从 6 月 5 日起关注，6 月 9-10 日重点盯早班，最终以“厦门轮渡+”显示为准。</td>
+              <td>假期船票紧张，下午返程排队更长。</td>
+            </tr>
+            <tr>
+              <td>6 月 7 日</td>
+              <td>抢 6 月 21 日厦门回深圳高铁</td>
+              <td>建议 14:30-16:30 之间返程，既能吃午饭又不压到深夜到家。</td>
+              <td>假期最后一天返程票比去程更关键。</td>
+            </tr>
+            <tr>
+              <td>出发前 3-7 天</td>
+              <td>复核植物园、南普陀、厦大、科技馆</td>
+              <td>植物园可提前购票；南普陀和厦大看官方预约；科技馆作为雨天备选，确认周一闭馆和节假日开放。</td>
+              <td>预约规则会随节假日和管理安排变化。</td>
+            </tr>
+            <tr>
+              <td>每天早上</td>
+              <td>看降雨雷达和预警</td>
+              <td>雷阵雨明显时取消海边长走，把户外压缩到雨停后的 1-2 小时。</td>
+              <td>6 月短时强降雨会影响船、海边和植物园体验。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note important" style="margin-top:16px;">
+        官方事实和参考时刻分开处理：铁路预售期、端午假期和轮渡购票规则是硬约束；页面中的车次时段来自 12306 同线路可售窗口查询，只用于判断“晚间有车、耗时约 3 小时上下”，最终以 6 月 4 日和 6 月 7 日 12306 实际售票页面为准。
+      </div>
+    </section>
+
+    <section id="daily">
+      <h2>每日路线</h2>
+      <p class="section-lead">节奏按“上午主景点、午后休息、傍晚海边或街区、夜间回中山路”设计。每一天都给出可删减项，遇雨直接切换。</p>
+
+      <div class="timeline">
+        <article class="day">
+          <div class="day-head">
+            <strong>D1</strong>
+            <span>6 月 18 日 周四<br>深圳下班后出发</span>
+          </div>
+          <div class="day-body">
+            <div class="slot">
+              <div class="slot-time">17:30-18:30</div>
+              <div>
+                <h3>下班后直奔深圳北</h3>
+                <p>轻装出发，晚餐建议在深圳北或车上解决。若从福田/南山出发，提前把通勤拥堵算进站前时间。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">18:30-20:30</div>
+              <div>
+                <h3>深圳北到厦门北/厦门</h3>
+                <p>参考同线路窗口，晚间约 18:45、19:00、20:10、20:15、20:40 有到厦门北/厦门的车次形态，耗时约 2 小时 50 分至 3 小时 40 分。</p>
+                <p>优先选到“厦门站”的车可以减少夜间进城成本；如果到厦门北，地铁 1 号线或网约车到中山路。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">21:30-23:50</div>
+              <div>
+                <h3>入住中山路附近</h3>
+                <p>到店后只做两件事：确认第二天船票和证件、买水和防晒。不要临时加夜宵大餐，第二天要早起登岛。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-head">
+            <strong>D2</strong>
+            <span>6 月 19 日 周五<br>鼓浪屿早进早出</span>
+          </div>
+          <div class="day-body">
+            <div class="slot">
+              <div class="slot-time">07:15-08:30</div>
+              <div>
+                <h3>中山路到邮轮中心厦鼓码头</h3>
+                <p>早餐从便利店或老城区小吃轻量解决，打车或公交到邮轮中心厦鼓码头。早班船到三丘田码头，减少上岛后折返。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">08:45-11:30</div>
+              <div>
+                <h3>三丘田到核心老建筑线</h3>
+                <p>建议路线：三丘田码头、最美转角、船屋、汇丰公馆旧址、日光岩或菽庄花园二选一。日光岩要早上去，晚了排队和热度都上来。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">11:30-13:30</div>
+              <div>
+                <h3>避开主街正午拥挤</h3>
+                <p>午饭以简餐和饮品为主，别为网红店排长队。小红书近期反馈里，鼓浪屿店铺体验差异大，点单前看明码价格和评价时间。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">13:30-15:00</div>
+              <div>
+                <h3>返程回中山路休息</h3>
+                <p>官方购票须知提示下午 15:00-18:30 是出岛返程高峰，建议 15:00 前回到码头。回酒店午休，避开高温和人流。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">17:30-21:00</div>
+              <div>
+                <h3>八市、中山路、鹭江道夜景</h3>
+                <p>晚餐在八市或中山路周边解决，原则是明码点单、不进拉客海鲜店。饭后走鹭江道看海对岸鼓浪屿夜色，最后回中山路。</p>
+                <p><strong>雨天替代：</strong>只保留鼓浪屿 2-3 小时核心线，或改为华侨博物院、咖啡、商圈，船票按官方退改规则处理。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-head">
+            <strong>D3</strong>
+            <span>6 月 20 日 周六<br>植物园、南普陀、沙坡尾、曾厝垵</span>
+          </div>
+          <div class="day-body">
+            <div class="slot">
+              <div class="slot-time">07:30-10:30</div>
+              <div>
+                <h3>厦门园林植物园</h3>
+                <p>从西门或更顺路入口进，重点看雨林世界、多肉植物区。官方开放时间覆盖清晨；6 月雨林世界雾森为 9:30-11:30、14:30-16:30，想看雾森就尽量 9:30 前后到雨林世界。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">10:45-12:00</div>
+              <div>
+                <h3>南普陀轻走</h3>
+                <p>预约规则以寺院官方渠道为准。建议只看主轴和素饼，不安排五老峰长爬坡，6 月中午体力消耗不划算。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">12:00-15:00</div>
+              <div>
+                <h3>午饭和酒店休整</h3>
+                <p>回中山路附近吃沙茶面、姜母鸭或家常海鲜。午后洗澡换衣服，带伞、防晒和充电宝再出门。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">15:30-17:30</div>
+              <div>
+                <h3>沙坡尾和演武大桥</h3>
+                <p>沙坡尾适合拍照和咖啡，不建议把吃饭押在网红高价店。天气好先走沙坡尾、演武大桥观景平台；如果云层厚，就把这段缩短，给曾厝垵留 60 分钟即可。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">17:30-19:00</div>
+              <div>
+                <h3>曾厝垵短逛和环岛路海边</h3>
+                <p>从沙坡尾打车或公交到曾厝垵，按“文创小店、街巷氛围、饮品小食”短逛 60-90 分钟。走出村子就是环岛路和海边，天气好可顺手看傍晚，不把正餐和海鲜消费押在这里。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">19:00-21:30</div>
+              <div>
+                <h3>晚餐回到老城区</h3>
+                <p>曾厝垵或海边结束后回中山路或八市吃饭，避免在景区门口临时被招揽。晚上确认返程票、退房时间和去厦门北的路线。</p>
+                <p><strong>雨天替代：</strong>厦门科技馆、SM 城市广场、咖啡馆、华侨博物院。植物园只在小雨且无雷电时保留，雷雨则取消；曾厝垵雨大时直接删掉。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-head">
+            <strong>D4</strong>
+            <span>6 月 21 日 周日<br>轻量收尾后返深</span>
+          </div>
+          <div class="day-body">
+            <div class="slot">
+              <div class="slot-time">08:30-10:30</div>
+              <div>
+                <h3>八市早餐和老城补货</h3>
+                <p>吃早餐、买伴手礼、拍骑楼街景。大件行李寄存在酒店前台，不拖箱进市场。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">10:30-12:00</div>
+              <div>
+                <h3>中山路周边慢走</h3>
+                <p>可选华侨博物院、咖啡馆、老剧场文化公园或镇海路附近短线。若厦大官方预约成功，可短参观，不成功就不要排队碰运气。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">12:00-13:30</div>
+              <div>
+                <h3>午饭、取行李、去车站</h3>
+                <p>若从厦门北返程，从中山路区域预留 60-75 分钟到站；若从厦门站返程，预留 25-40 分钟。端午末日宁可早到站。</p>
+              </div>
+            </div>
+            <div class="slot">
+              <div class="slot-time">14:30-20:00</div>
+              <div>
+                <h3>厦门到深圳</h3>
+                <p>参考同线路窗口，14:00 后有多班厦门北/厦门到深圳北列车，耗时约 2 小时 50 分至 3 小时 45 分。建议买 14:30-16:30 区间，回深圳不会太晚。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stay">
+      <h2>住宿策略</h2>
+      <p class="section-lead">中山路附近已经订好 3 晚，这是本次路线的优势：夜间安全感和补给强，去鼓浪屿、八市、南普陀、沙坡尾和曾厝垵都不远。劣势是节假日可能吵，打车到厦门北时间不短。</p>
+      <div class="grid cols-3">
+        <article class="card accent-sea">
+          <h3>适合做什么</h3>
+          <ul>
+            <li>晚到后快速入住。</li>
+            <li>鼓浪屿返程后回酒店休息。</li>
+            <li>夜间吃饭、补水、买药和散步。</li>
+          </ul>
+        </article>
+        <article class="card accent-gold">
+          <h3>需要注意</h3>
+          <ul>
+            <li>确认房间是否临街，端午夜间可能吵。</li>
+            <li>返程去厦门北要留足车程。</li>
+            <li>不要每天都在中山路吃正餐，容易踩景区溢价。</li>
+          </ul>
+        </article>
+        <article class="card accent-leaf">
+          <h3>行李处理</h3>
+          <ul>
+            <li>D1 晚上只拆洗漱和第二天衣物。</li>
+            <li>D2 鼓浪屿轻装，带身份证、伞、水。</li>
+            <li>D4 退房后寄存，午饭后再取。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="food">
+      <h2>美食安排</h2>
+      <p class="section-lead">小红书近期反馈里，中山路、八市、沙坡尾、曾厝垵的争议主要集中在拉客海鲜、价格不透明、网红店排队和期望过高。策略是“吃品类，不迷信店名”。</p>
+      <div class="grid cols-2">
+        <article class="card accent-coral">
+          <h3>每天怎么吃</h3>
+          <ul>
+            <li>D1：车站简餐，抵达后不吃重口夜宵。</li>
+            <li>D2：鼓浪屿上午轻食，中山路/八市晚餐。</li>
+            <li>D3：植物园后吃沙茶面或本地小炒，曾厝垵只吃饮品小食，晚上回老城区正餐。</li>
+            <li>D4：八市早餐，午饭选车站前不赶时间的店。</li>
+          </ul>
+        </article>
+        <article class="card accent-gold">
+          <h3>值得尝试的品类</h3>
+          <ul>
+            <li>沙茶面、花生汤、海蛎煎、土笋冻。</li>
+            <li>姜母鸭、同安封肉、五香卷、扁食汤。</li>
+            <li>鼓浪屿馅饼、南普陀素饼、黄则和类传统点心。</li>
+            <li>海鲜可以吃，但只选明码称重和评价稳定的店。</li>
+          </ul>
+        </article>
+      </div>
+      <div class="note" style="margin-top:16px;">
+        点餐底线：不吃路边拉客海鲜，不点没有标价的“时价”菜，称重前确认单位和做法，网红店排队超过 20 分钟就换同品类替代。
+      </div>
+    </section>
+
+    <section id="gifts">
+      <h2>伴手礼和文创</h2>
+      <p class="section-lead">最后一天上午买最合适，避免背着走鼓浪屿和植物园。食品类优先小包装，文创类优先轻、不易碎、能代表厦门海岛和骑楼元素。</p>
+      <div class="grid cols-4">
+        <article class="card accent-gold">
+          <h3>食品类</h3>
+          <p>馅饼、素饼、花生酥、海苔肉松类。适合办公室分发，注意保质期和包装体积。</p>
+        </article>
+        <article class="card accent-sea">
+          <h3>茶和饮品</h3>
+          <p>福建茶叶可买小罐装试饮款，不建议在景区高价冲动购买大礼盒。</p>
+        </article>
+        <article class="card accent-plum">
+          <h3>文创类</h3>
+          <p>鼓浪屿建筑明信片、冰箱贴、城市散步地图、植物园主题小物。轻便比大件更实用。</p>
+        </article>
+        <article class="card accent-leaf">
+          <h3>购买位置</h3>
+          <p>中山路、八市周边、鼓浪屿核心街区都能买。建议 D4 统一采购，买前比价。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pitfalls">
+      <h2>避坑重点</h2>
+      <div class="grid cols-2">
+        <article class="card accent-coral">
+          <h3>交通和票务</h3>
+          <ul>
+            <li>端午返程票最重要，6 月 7 日重点盯 6 月 21 日厦门回深圳。</li>
+            <li>鼓浪屿白天游客从邮轮中心厦鼓码头等游客航线进岛，不要走错居民码头规则。</li>
+            <li>买船票后看清往程日期、航次、码头；返程也要避开 15:00-18:30 高峰。</li>
+            <li>所有预约类景点用官方渠道，不从陌生链接付“代预约费”。</li>
+          </ul>
+        </article>
+        <article class="card accent-gold">
+          <h3>天气和体力</h3>
+          <ul>
+            <li>6 月雷阵雨突然，带晴雨伞、速干衣、备用袜子。</li>
+            <li>植物园和环岛路都不适合正午硬走，午休比多打一个卡更值。</li>
+            <li>遇到雷电，不上日光岩、不去海边长时间停留。</li>
+            <li>每天至少留 1 小时机动，端午不按普通周末估算排队。</li>
+          </ul>
+        </article>
+        <article class="card accent-sea">
+          <h3>餐饮消费</h3>
+          <ul>
+            <li>八市和中山路只吃明码店，海鲜称重确认单价、斤两和加工费。</li>
+            <li>沙坡尾适合看景和喝东西，不适合把正餐押在高价网红店。</li>
+            <li>曾厝垵适合短逛和小食，不建议在那里吃本次最贵的一餐。</li>
+            <li>鼓浪屿主街可以逛，不建议在那里解决最贵的一餐。</li>
+          </ul>
+        </article>
+        <article class="card accent-plum">
+          <h3>拍照预期</h3>
+          <ul>
+            <li>鼓浪屿、植物园、海边都吃天气，阴雨天质感会明显下降。</li>
+            <li>想拍空景只能早，节假日 10:30 后核心点人流明显增加。</li>
+            <li>不要为了拍照长期占道或在海边礁石冒险。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <h2>出发清单</h2>
+      <div class="card accent-leaf">
+        <ul class="checklist">
+          <li>身份证和 12306 乘车人信息已核验。</li>
+          <li>6 月 18 日去程票、6 月 21 日返程票已购买或候补。</li>
+          <li>鼓浪屿 6 月 19 日早班船票已购买。</li>
+          <li>酒店地址、电话、入住时间已截图。</li>
+          <li>手机里保存离线地图和酒店到厦门北路线。</li>
+          <li>晴雨伞、防晒、帽子、薄外套、速干衣物。</li>
+          <li>充电宝、数据线、纸巾、湿巾、肠胃药、创可贴。</li>
+          <li>轻便双肩包，鼓浪屿当天不要拖箱。</li>
+          <li>每天早上看天气预警，雷雨就切换室内备选。</li>
+          <li>伴手礼最后一天买，给行李留 20% 空间。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>资料来源</h2>
+      <p class="section-lead">研究日期：2026 年 5 月 25 日初版，2026 年 5 月 26 日复核。官方资料用于约束假期、铁路、船票、景区开放与天气风险；小红书只作为近期体验和避坑信号，不覆盖官方规则。</p>
+      <div class="grid cols-2">
+        <article class="card accent-blue source-list">
+          <h3>官方和准官方资料</h3>
+          <ul>
+            <li><a href="https://www.gov.cn/gongbao/2025/issue_12406/202511/content_7048922.html">中国政府网：国务院办公厅关于 2026 年部分节假日安排的通知</a></li>
+            <li><a href="https://www.12306.cn/mormhweb/zxdt/202205/t20220531_37508.html">铁路 12306：铁路客票预售期调整为 15 天</a></li>
+            <li><a href="https://www.gov.cn/yaowen/liebiao/202401/content_6923981.htm">中国政府网：铁路 12306 购票需求预填和起售提醒</a></li>
+            <li><a href="https://www.xmferry.com/wybm/wshlk/wlgpp/index.htm">厦门轮渡有限公司：游客购票须知</a></li>
+            <li><a href="https://www.xmferry.com/hxjpj/yk/hx/">厦门轮渡有限公司：游客航线与票价</a></li>
+            <li><a href="https://xiamenbg.com/Dp/time">厦门市园林植物园：开放时间</a></li>
+            <li><a href="https://www.xiamenbg.com/Dp/gpzn">厦门市园林植物园：购票指南</a></li>
+            <li><a href="https://www.weather.com.cn/cityintro/101230201.shtml">中国天气网：厦门气候背景分析</a></li>
+          </ul>
+        </article>
+        <article class="card accent-coral source-list">
+          <h3>小红书检索关键词</h3>
+          <ul>
+            <li>厦门 端午 鼓浪屿 避坑 排队</li>
+            <li>厦门 6月 暴雨 雷阵雨 避坑</li>
+            <li>厦门 曾厝垵 沙坡尾 避坑 美食</li>
+            <li>厦门 中山路 八市 海鲜 避坑</li>
+          </ul>
+          <p>使用方式：提炼近期游客对人流、排队、拍照时段、雨天体验、餐饮消费争议的反馈。复核结论支持当前路线：鼓浪屿早进早出；植物园放上午并对齐雾森时段；曾厝垵只短逛不吃正餐；中山路和八市坚持明码点单、不进拉客店。</p>
+        </article>
+        <article class="card accent-gold source-list">
+          <h3>图片授权</h3>
+          <ul>
+            <li>Gulangyu Island from Zhongshan Road, Xiamen.jpg，作者 Slyronit，CC BY-SA 4.0，Wikimedia Commons。</li>
+            <li>Panorama of Zhongshan Road, Xiamen.jpg，CC BY-SA 4.0，Wikimedia Commons。</li>
+            <li>Photo taken in the Rainforest area of Xiamen Botanical Garden，CC BY 4.0，Wikimedia Commons。</li>
+          </ul>
+        </article>
+        <article class="card accent-leaf">
+          <h3>待出发前复核</h3>
+          <ul>
+            <li>6 月 18 日和 6 月 21 日最终车次、检票口、到达站。</li>
+            <li>鼓浪屿船票码头、航次、退改规则和天气停航公告。</li>
+            <li>植物园喷雾时间、南普陀预约、厦大预约、科技馆节假日开放。</li>
+            <li>出发前三天和当天早上的天气预警。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    本页面为本地旅行规划文件，未代订任何票务。涉及开放时间、票价、预约和天气的内容，请在出发前以官方渠道实时信息为准。
+  </footer>
+</body>
+</html>
