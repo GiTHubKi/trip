@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>龙岗妇幼保健院产科医生小红书分析表</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f7;
+      --ink: #182230;
+      --muted: #5d6b7c;
+      --line: #d8e0e8;
+      --teal: #0f766e;
+      --teal-soft: #d9f1ed;
+      --blue: #2563eb;
+      --blue-soft: #dbeafe;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --rose: #be123c;
+      --rose-soft: #ffe4e6;
+      --violet: #6d28d9;
+      --violet-soft: #ede9fe;
+      --shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(15, 118, 110, 0.92), rgba(37, 99, 235, 0.86)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='360' viewBox='0 0 1200 360'%3E%3Crect width='1200' height='360' fill='%23f8fafc'/%3E%3Cg fill='none' stroke='%2394a3b8' stroke-width='1.2' opacity='0.45'%3E%3Cpath d='M60 78h180M60 122h300M60 166h230M60 210h340M60 254h280'/%3E%3Cpath d='M520 62h520v230H520z'/%3E%3Cpath d='M560 104h120v120H560zM720 104h120v120H720zM880 104h120v120H880z'/%3E%3Cpath d='M560 260h440M560 286h320'/%3E%3C/g%3E%3Cg fill='%230f766e' opacity='0.16'%3E%3Crect x='560' y='104' width='120' height='120'/%3E%3Crect x='720' y='104' width='120' height='120'/%3E%3Crect x='880' y='104' width='120' height='120'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 26px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 16px 0 10px;
+      max-width: 920px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 920px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+      padding: 9px 13px;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      border-color: rgba(255, 255, 255, 0.35);
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    .btn.ghost {
+      border-color: rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 44px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: -44px;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .section.alt {
+      background: var(--surface-2);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bullets {
+      margin: 0;
+      padding-left: 20px;
+      color: #334155;
+    }
+
+    .bullets li + li {
+      margin-top: 8px;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      margin: 14px 0 16px;
+    }
+
+    .search {
+      width: 100%;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      font: inherit;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .segments {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .segment {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .segment.active {
+      border-color: var(--teal);
+      background: var(--teal-soft);
+      color: #064e3b;
+      font-weight: 700;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .tier {
+      min-height: 148px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 14px;
+    }
+
+    .tier h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .tier p {
+      margin: 0;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .tagline {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 3px 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .positive { background: var(--teal-soft); color: #075e54; }
+    .expert { background: var(--blue-soft); color: #1d4ed8; }
+    .mixed { background: var(--amber-soft); color: #92400e; }
+    .caution { background: var(--rose-soft); color: #9f1239; }
+    .weak { background: var(--violet-soft); color: #5b21b6; }
+
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .doctor-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 16px;
+      min-height: 228px;
+    }
+
+    .doctor-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .doctor-card h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 8px;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .metric + .metric {
+      margin-top: 8px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 86px 1fr 56px;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #dbe3ec;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .scenario {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 14px;
+    }
+
+    .scenario h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .scenario p {
+      margin: 6px 0 0;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .sources {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .source-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #334155;
+    }
+
+    .source-list li + li {
+      margin-top: 6px;
+    }
+
+    .empty {
+      display: none;
+      padding: 22px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: #fff;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .stats,
+      .overview-grid,
+      .doctor-grid,
+      .scenario-grid,
+      .sources {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .segments {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-inner,
+      .main {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .hero-inner {
+        padding-top: 26px;
+      }
+
+      .stats,
+      .overview-grid,
+      .doctor-grid,
+      .scenario-grid,
+      .sources {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 16px;
+      }
+
+      .bar-row {
+        grid-template-columns: 72px 1fr 44px;
+        gap: 8px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .hero-actions,
+      .toolbar {
+        display: none;
+      }
+
+      .main {
+        width: 100%;
+        padding: 12px;
+      }
+
+      .hero {
+        color: #111827;
+        background: #fff;
+        border-bottom: 1px solid #d1d5db;
+      }
+
+      .hero p,
+      .eyebrow {
+        color: #334155;
+      }
+
+      .section,
+      .stat,
+      .doctor-card,
+      .tier,
+      .scenario {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">RedBookSkills 数据分析 · 2026-06-06</div>
+        <h1>龙岗妇幼保健院产科医生小红书分析表</h1>
+        <p>基于小红书搜索笔记、详情评论和公开网页核对整理。表格反映社媒口碑倾向，不替代医生面诊、医院排班或专业医疗判断。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#doctor-section">查看医生表</a>
+          <a class="btn ghost" href="./mobile.html">移动端版</a>
+          <a class="btn ghost" href="#sources">查看来源</a>
+          <button class="btn ghost" type="button" onclick="window.print()">打印</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="stats" aria-label="数据统计">
+        <div class="stat"><strong>6</strong><span>组小红书关键词</span></div>
+        <div class="stat"><strong>53</strong><span>条去重笔记</span></div>
+        <div class="stat"><strong>11/16</strong><span>条详情成功抓取</span></div>
+        <div class="stat"><strong>343</strong><span>条评论与回复文本</span></div>
+      </section>
+
+      <section class="section" id="scope">
+        <div class="section-title">
+          <h2>数据口径</h2>
+          <p class="note">小红书评论存在样本偏差，结果仅用于挂号前的信息整理。</p>
+        </div>
+        <ul class="bullets">
+          <li>检索关键词包括：龙岗妇幼保健院 产科医生、龙岗妇幼产科医生评价、龙岗妇幼产检 医生推荐、深圳市龙岗区妇幼保健院 产科医生、龙岗妇幼产科医生名单、龙岗妇幼产科医生杨金英。</li>
+          <li>搜索结果去重后共 53 条笔记；重点抓取 16 条高相关笔记详情，其中 11 条成功返回详情，5 条提示“当前笔记暂时无法浏览”。</li>
+          <li>成功详情样本包含 188 条一级评论、155 条回复，共 343 条评论/回复文本。</li>
+          <li>医生排班、职称、是否仍出诊，应以医院挂号页或院方电话为准。</li>
+        </ul>
+      </section>
+
+      <section class="section alt" id="overview">
+        <div class="section-title">
+          <h2>结论速览</h2>
+          <p class="note">按社媒口碑倾向分层，不代表医学排序。</p>
+        </div>
+        <div class="overview-grid">
+          <article class="tier">
+            <span class="tagline positive">高频正向</span>
+            <h3>杨金英、曹永利、王秀梅、朱琦、邝清梅</h3>
+            <p>更常出现在高危/免疫/剖宫产咨询、慢病合并妊娠、普通产检耐心型需求里。</p>
+          </article>
+          <article class="tier">
+            <span class="tagline expert">专家/特需向</span>
+            <h3>后建丽、杨金英、曹永利</h3>
+            <p>适合复杂问题、专家号/特需号、孕晚期方案确认时优先复核。</p>
+          </article>
+          <article class="tier">
+            <span class="tagline mixed">评价分歧</span>
+            <h3>连旭波、吴艳、陈秋珍、梁兰芳</h3>
+            <p>正负反馈并存，可先按一次普通产检体验，不建议只看单条评价。</p>
+          </article>
+          <article class="tier">
+            <span class="tagline caution">谨慎复核</span>
+            <h3>刘楼、鹿玉英、李银芳</h3>
+            <p>评论区负向反馈较集中，挂号前建议查近期同场景评价。</p>
+          </article>
+          <article class="tier">
+            <span class="tagline weak">历史/样本少</span>
+            <h3>李穗湘、程丹玲、高莹、张艺馨、陈杰平、廖桂莲</h3>
+            <p>有正向提及，但样本少或存在出诊状态不确定。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="chart-section">
+        <div class="section-title">
+          <h2>提及强度</h2>
+          <p class="note">按已归并别名后的提及次数排序。</p>
+        </div>
+        <div class="bar-list" id="bar-list"></div>
+      </section>
+
+      <section class="section" id="doctor-section">
+        <div class="section-title">
+          <h2>医生分析表</h2>
+          <p class="note" id="result-count"></p>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="search" type="search" placeholder="搜索医生、场景或关键词">
+          <div class="segments" aria-label="筛选医生分层">
+            <button class="segment active" type="button" data-filter="all">全部</button>
+            <button class="segment" type="button" data-filter="positive">正向</button>
+            <button class="segment" type="button" data-filter="expert">专家</button>
+            <button class="segment" type="button" data-filter="mixed">分歧</button>
+            <button class="segment" type="button" data-filter="caution">谨慎</button>
+            <button class="segment" type="button" data-filter="weak">弱样本</button>
+          </div>
+        </div>
+        <div class="doctor-grid" id="doctor-grid"></div>
+        <div class="empty" id="empty">没有匹配结果。</div>
+      </section>
+
+      <section class="section alt">
+        <div class="section-title">
+          <h2>完整表格</h2>
+          <p class="note">横向滚动可查看全部列。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>医生</th>
+                <th>口碑方向</th>
+                <th>样本强度</th>
+                <th>高频反馈</th>
+                <th>可能适合</th>
+                <th>注意点</th>
+              </tr>
+            </thead>
+            <tbody id="doctor-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="scenarios">
+        <div class="section-title">
+          <h2>按需求选择</h2>
+          <p class="note">用于缩小挂号前的复核名单。</p>
+        </div>
+        <div class="scenario-grid">
+          <article class="scenario">
+            <h3>高危、免疫、早产保胎、复杂问题</h3>
+            <p><strong>优先复核：</strong>杨金英、曹永利、后建丽</p>
+            <p><strong>备选：</strong>王秀梅</p>
+            <p><strong>注意：</strong>不建议只凭普通产检好评决定。</p>
+          </article>
+          <article class="scenario">
+            <h3>妊娠高血压、糖代谢异常、希望解释清楚</h3>
+            <p><strong>优先复核：</strong>王秀梅、曹永利</p>
+            <p><strong>备选：</strong>杨金英</p>
+            <p><strong>注意：</strong>沟通负评集中的医生需谨慎。</p>
+          </article>
+          <article class="scenario">
+            <h3>普通产检，想找温柔耐心</h3>
+            <p><strong>优先复核：</strong>邝清梅、朱琦、王秀梅</p>
+            <p><strong>备选：</strong>张艺馨、陈杰平、李穗湘历史口碑</p>
+            <p><strong>谨慎：</strong>刘楼、鹿玉英、李银芳</p>
+          </article>
+          <article class="scenario">
+            <h3>剖宫产/手术方案咨询</h3>
+            <p><strong>优先复核：</strong>杨金英、曹永利、程丹玲</p>
+            <p><strong>备选：</strong>后建丽</p>
+            <p><strong>注意：</strong>陈秋珍评价分歧，需查同场景近评。</p>
+          </article>
+          <article class="scenario">
+            <h3>号源难抢时的备选</h3>
+            <p><strong>优先复核：</strong>朱琦、邝清梅、王秀梅</p>
+            <p><strong>备选：</strong>高莹、梁兰芳</p>
+            <p><strong>注意：</strong>不建议因为“有号”直接选负评集中的医生。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="sources">
+        <div class="section-title">
+          <h2>来源</h2>
+          <p class="note">小红书笔记 ID 需登录小红书查看，公开网页用于医生和医院信息核对。</p>
+        </div>
+        <div class="sources">
+          <div>
+            <h3>成功抓取详情的小红书笔记</h3>
+            <ul class="source-list">
+              <li><code>671c47f4000000001402c2ce</code>：龙岗妇幼产检医生</li>
+              <li><code>68f0b77e0000000007002630</code>：龙岗妇幼哪个医生温柔呀？</li>
+              <li><code>669ca2ef00000000050046ba</code>：求推荐龙岗妇幼好的产科医生</li>
+              <li><code>66abb2d30000000027011b86</code>：龙岗妇幼产科门诊医生推荐连医生，超级温柔</li>
+              <li><code>69cbcde40000000021039f27</code>：求推荐龙岗妇幼产科医生</li>
+              <li><code>69a5af1900000000150324ee</code>：龙岗妇幼产科男神医生｜杨金英主任</li>
+              <li><code>680eefc6000000000900d7c4</code>：龙岗妇幼推荐</li>
+              <li><code>688b3eae00000000250154f2</code>：龙岗妇幼YYDS！后建丽主任真的是产科天花板</li>
+              <li><code>663a373a000000001e03416b</code>：龙岗妇幼李穗湘医生</li>
+              <li><code>6a1f1a7c00000000350389da</code>：一剖二顺 成功！避雷龙岗妇幼陈秋珍！</li>
+              <li><code>6800c9e1000000001d002f5e</code>：认识一下，龙岗妇幼杨金英主任！</li>
+            </ul>
+          </div>
+          <div>
+            <h3>公开网页核对来源</h3>
+            <ul class="source-list">
+              <li><a href="https://www.sz.gov.cn/hospital/lgyy/qfybjy/content/post_9389944.html" target="_blank" rel="noreferrer">深圳市政府：深圳市龙岗区妇幼保健院</a></li>
+              <li><a href="https://www.91160.com/unit/unitintro/uid-124.html" target="_blank" rel="noreferrer">健康160：深圳市龙岗区妇幼保健院介绍</a></li>
+              <li><a href="https://www.youlai.cn/yyk/hospindex/2254/departmentindex_9530.html" target="_blank" rel="noreferrer">有来医生：深圳市龙岗区妇幼保健院产科医生列表</a></li>
+              <li><a href="https://health.baidu.com/doctordec/departmentlist/1000350" target="_blank" rel="noreferrer">百度健康：深圳市龙岗区妇幼保健院科室医生列表</a></li>
+            </ul>
+            <h3>无法浏览详情的弱参考笔记</h3>
+            <ul class="source-list">
+              <li><code>68a72e27000000001b03141c</code>：龙岗妇幼孕期看哪个医生好啊？</li>
+              <li><code>69f75ea9000000002301e794</code>：求助！龙岗妇幼产科主任，选哪位？</li>
+              <li><code>687dc52f0000000010025c80</code>：龙岗妇幼剖腹产选哪个医生呀</li>
+              <li><code>686ab294000000000b02cb27</code>：宝妈来推荐一下龙岗妇幼产科医生</li>
+              <li><code>688b7bf1000000002303a648</code>：龙岗妇幼程丹玲主任yyds</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const doctors = [
+      { name: "杨金英", group: "positive", groupLabel: "正向偏强", mentions: 26, sources: 4, strength: "26 次提及 / 4 篇详情", feedback: "常被提到“经验足”“专业”“高危/免疫问题可考虑”；点名笔记称其擅长早产保胎、双胎妊娠、宫颈环扎、腹膜外、臀位外倒转等", fit: "高危妊娠、免疫问题、早产保胎、剖宫产方案咨询", caution: "部分内容来自特需/VIP相关笔记，存在推广属性，需以医院挂号页核实" },
+      { name: "曹永利", group: "positive", groupLabel: "正向", mentions: 11, sources: 3, strength: "11 次提及 / 3 篇详情", feedback: "评论提到“曹主任比较牛”“心细”“剖腹产恢复好”；也有“号比较难约”", fit: "孕晚期复杂情况、免疫问题、剖宫产/手术方案复核", caution: "样本里多用“曹主任/曹医生”，本表按曹永利归并，挂号时需确认" },
+      { name: "王秀梅", group: "positive", groupLabel: "正向", mentions: 11, sources: 3, strength: "11 次提及 / 3 篇详情", feedback: "反馈集中在“态度好”“不乱开单开药”“高血压和糖尿病方面比较专业”“有问题耐心解答”", fit: "有妊娠高血压、糖代谢异常、想要解释细致的孕妈", caution: "互动样本不算大，但正向内容比较具体" },
+      { name: "朱琦", group: "positive", groupLabel: "正向但信息短", mentions: 14, sources: 5, strength: "14 次提及 / 5 篇详情", feedback: "多条短评直接推荐，常见反馈是“挺好”“号难抢”", fit: "普通产检、想找被多人点名推荐的医生", caution: "评价多是点名式推荐，细节少；需结合近期号源和个人体验" },
+      { name: "邝清梅", group: "positive", groupLabel: "正向", mentions: 5, sources: 4, strength: "5 次提及 / 4 篇详情", feedback: "反馈集中在“温柔有耐心”“不让人焦虑”；也有人说“等得比较久”“只有周二有号”", fit: "普通产检、对情绪安抚和解释耐心要求高", caution: "样本量中等偏少，且可能受出诊时间限制" },
+      { name: "后建丽", group: "expert", groupLabel: "正向但偏推广样本", mentions: 12, sources: 2, strength: "12 次提及 / 2 篇详情", feedback: "被归为专家号；点名笔记称“专业过硬”“特需门诊”“产科天花板”", fit: "专家/特需门诊、复杂产检问题复核", caution: "主要正向来自一篇安利型内容，需降低推广偏差" },
+      { name: "连旭波", group: "mixed", groupLabel: "评价分歧", mentions: 19, sources: 4, strength: "19 次提及 / 4 篇详情", feedback: "正向：温柔、耐心、情绪价值足；负向：不负责、不严谨、催开单、体验糟心", fit: "如果重视沟通氛围，可作为普通产检候选之一", caution: "分歧明显，不建议只看单条好评或差评；首次就诊后再决定是否长期固定" },
+      { name: "吴艳", group: "mixed", groupLabel: "评价分歧", mentions: 11, sources: 5, strength: "11 次提及 / 5 篇详情", feedback: "正向：有人长期挂、认为“还可以”；负向：有人反馈凶、发脾气、没耐心", fit: "能接受直接风格、已有明确问题清单的孕妈", caution: "对沟通风格敏感者需谨慎" },
+      { name: "陈秋珍", group: "mixed", groupLabel: "评价分歧", mentions: 7, sources: 4, strength: "7 次提及 / 4 篇详情", feedback: "有评论称“靠谱、安心、温柔有耐心”；也有近期笔记标题直接避雷", fit: "普通产检可候选，但不宜只看单边评价", caution: "负向样本来自生产体验类笔记，建议重点查近期同场景反馈" },
+      { name: "李银芳", group: "caution", groupLabel: "偏谨慎", mentions: 6, sources: 4, strength: "6 次提及 / 4 篇详情", feedback: "有人认为号难抢或还可以；负向集中在“态度差”“避雷”", fit: "若只是普通检查且无其他号源，可作为备选", caution: "负向反馈较直接，沟通预期要放低" },
+      { name: "刘楼", group: "caution", groupLabel: "谨慎", mentions: 16, sources: 5, strength: "16 次提及 / 5 篇详情", feedback: "负向词集中在敷衍、一般、别挂；也有少量“VIP临时加号体验还可以”", fit: "不建议作为首选；临时加号可视情况", caution: "负向反馈在样本中较集中" },
+      { name: "鹿玉英", group: "caution", groupLabel: "谨慎，需核名", mentions: 12, sources: 2, strength: "12 次提及 / 2 篇详情", feedback: "评论多以“鹿/鹿医生/姓鹿”出现，负向集中在不耐烦、差评、避雷", fit: "不建议只凭社媒选择；需先确认具体医生姓名", caution: "因评论多为姓氏简称，本表按公开医生列表中的鹿玉英暂归并，需挂号页复核" },
+      { name: "李穗湘", group: "weak", groupLabel: "历史正向", mentions: 3, sources: 2, strength: "3 次提及 / 2 篇详情", feedback: "反馈温柔、耐心、亲切；点名笔记提到退休前最后出诊日", fit: "可作为历史口碑参考", caution: "可能已退休或不再常规出诊，不能作为当前挂号建议" },
+      { name: "程丹玲", group: "weak", groupLabel: "弱正向", mentions: 5, sources: 1, strength: "5 次提及 / 1 篇详情", feedback: "有回复称细心、剖宫产体验感谢；另有搜索结果标题点名正向", fit: "剖宫产或想找细心型医生可进一步复核", caution: "可浏览详情样本少，结论可信度低" },
+      { name: "高莹", group: "weak", groupLabel: "弱正向", mentions: 5, sources: 2, strength: "5 次提及 / 2 篇详情", feedback: "有“推荐高莹”的评论，也有人提到号源时间限制", fit: "普通产检备选", caution: "样本少，需查近期出诊" },
+      { name: "梁兰芳", group: "mixed", groupLabel: "混合偏中性", mentions: 5, sources: 2, strength: "5 次提及 / 2 篇详情", feedback: "有人从怀到生一直挂；也有人反馈问诊很快、不能多问", fit: "普通流程型产检备选", caution: "如果希望医生详细解释，需谨慎" },
+      { name: "张艺馨", group: "weak", groupLabel: "小样本正向", mentions: 3, sources: 1, strength: "3 次提及 / 1 篇详情", feedback: "回复提到温柔、不乱开单", fit: "普通产检备选", caution: "样本太少" },
+      { name: "陈杰平", group: "weak", groupLabel: "小样本正向", mentions: 3, sources: 1, strength: "3 次提及 / 1 篇详情", feedback: "回复提到耐心、负责、nice", fit: "普通产检备选", caution: "样本太少" },
+      { name: "廖桂莲", group: "weak", groupLabel: "小样本正向", mentions: 2, sources: 2, strength: "2 次提及 / 2 篇详情", feedback: "有评论称温柔、细心", fit: "专家/主任号可进一步复核", caution: "样本太少，且部分评论只写“廖主任”" }
+    ];
+
+    const groupClass = {
+      positive: "positive",
+      expert: "expert",
+      mixed: "mixed",
+      caution: "caution",
+      weak: "weak"
+    };
+
+    const grid = document.getElementById("doctor-grid");
+    const table = document.getElementById("doctor-table");
+    const search = document.getElementById("search");
+    const resultCount = document.getElementById("result-count");
+    const empty = document.getElementById("empty");
+    const maxMentions = Math.max(...doctors.map((doctor) => doctor.mentions));
+    let activeFilter = "all";
+
+    function matches(doctor, query) {
+      const haystack = [
+        doctor.name,
+        doctor.groupLabel,
+        doctor.strength,
+        doctor.feedback,
+        doctor.fit,
+        doctor.caution
+      ].join(" ");
+      const filterOk = activeFilter === "all" || doctor.group === activeFilter;
+      return filterOk && haystack.includes(query);
+    }
+
+    function renderDoctors() {
+      const query = search.value.trim();
+      const filtered = doctors.filter((doctor) => matches(doctor, query));
+
+      grid.innerHTML = filtered.map((doctor) => `
+        <article class="doctor-card">
+          <div class="doctor-head">
+            <h3>${doctor.name}</h3>
+            <span class="badge ${groupClass[doctor.group]}">${doctor.groupLabel}</span>
+          </div>
+          <div class="metric"><span class="metric-label">样本</span><span>${doctor.strength}</span></div>
+          <div class="metric"><span class="metric-label">反馈</span><span>${doctor.feedback}</span></div>
+          <div class="metric"><span class="metric-label">适合</span><span>${doctor.fit}</span></div>
+          <div class="metric"><span class="metric-label">注意</span><span>${doctor.caution}</span></div>
+        </article>
+      `).join("");
+
+      table.innerHTML = filtered.map((doctor) => `
+        <tr>
+          <td><strong>${doctor.name}</strong></td>
+          <td><span class="badge ${groupClass[doctor.group]}">${doctor.groupLabel}</span></td>
+          <td>${doctor.strength}</td>
+          <td>${doctor.feedback}</td>
+          <td>${doctor.fit}</td>
+          <td>${doctor.caution}</td>
+        </tr>
+      `).join("");
+
+      resultCount.textContent = `当前显示 ${filtered.length} / ${doctors.length} 位医生`;
+      empty.style.display = filtered.length ? "none" : "block";
+    }
+
+    function renderBars() {
+      const list = document.getElementById("bar-list");
+      const sorted = [...doctors].sort((a, b) => b.mentions - a.mentions).slice(0, 12);
+      list.innerHTML = sorted.map((doctor) => {
+        const width = Math.max(6, Math.round((doctor.mentions / maxMentions) * 100));
+        return `
+          <div class="bar-row">
+            <strong>${doctor.name}</strong>
+            <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: ${width}%"></div></div>
+            <span>${doctor.mentions} 次</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    document.querySelectorAll(".segment").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".segment").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        renderDoctors();
+      });
+    });
+
+    search.addEventListener("input", renderDoctors);
+    renderBars();
+    renderDoctors();
+  </script>
+</body>
+</html>
