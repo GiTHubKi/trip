@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f6f2" />
+  <title>婴儿车选购评分器｜100分制多产品对比</title>
+  <style>
+    :root{
+      --bg:#f7f6f2;
+      --surface:#ffffff;
+      --surface-2:#f1f0eb;
+      --text:#20211e;
+      --muted:#70736c;
+      --line:#e5e3dc;
+      --accent:#526b5d;
+      --accent-2:#dfe9e2;
+      --warn:#9a5c25;
+      --warn-bg:#fff4e8;
+      --danger:#a6433c;
+      --danger-bg:#fdeceb;
+      --good:#376847;
+      --good-bg:#eaf4ed;
+      --shadow:0 10px 30px rgba(40,45,40,.07);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .shell{max-width:1440px;margin:0 auto;padding:28px 28px 72px}
+    .hero{
+      display:flex;justify-content:space-between;gap:28px;align-items:flex-end;
+      padding:30px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(135deg,#fff 0%,#f2f4ef 100%);box-shadow:var(--shadow)
+    }
+    .eyebrow{font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--accent);text-transform:uppercase}
+    h1{margin:8px 0 10px;font-size:clamp(30px,4vw,54px);line-height:1.08;letter-spacing:-.04em}
+    .hero p{margin:0;max-width:760px;color:var(--muted);font-size:15px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;min-width:270px}
+    .btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:10px 14px;border-radius:12px;font-weight:750;transition:.15s ease;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(40,45,40,.08)}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+    .btn.ghost{background:transparent}
+    .btn.danger{color:var(--danger)}
+    .btn.small{padding:7px 10px;font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .panel-head{padding:20px 22px 14px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+    .panel-head h2{font-size:18px;margin:0;letter-spacing:-.02em}
+    .panel-head p{font-size:13px;color:var(--muted);margin:3px 0 0}
+    .summary-wrap{padding:0 22px 22px}
+    .ranking{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .rank-card{position:relative;border:1px solid var(--line);border-radius:16px;padding:16px;background:linear-gradient(180deg,#fff,#fafaf7);min-width:0}
+    .rank-card.first{border-color:#b8c8bd;background:linear-gradient(180deg,#f7fbf8,#eef5f0)}
+    .rank-badge{font-size:12px;color:var(--muted);font-weight:750}
+    .rank-name{font-size:16px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}
+    .score-line{display:flex;align-items:flex-end;gap:5px;margin-top:8px}
+    .score-big{font-size:36px;line-height:1;font-weight:900;letter-spacing:-.04em}
+    .score-max{font-size:12px;color:var(--muted);padding-bottom:3px}
+    .rank-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+    .pill{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:750;background:var(--surface-2);color:var(--muted)}
+    .pill.good{background:var(--good-bg);color:var(--good)}
+    .pill.warn{background:var(--warn-bg);color:var(--warn)}
+    .pill.danger{background:var(--danger-bg);color:var(--danger)}
+    .editor-list{padding:0 18px 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .product{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+    .product-top{padding:16px 16px 12px;display:flex;gap:12px;justify-content:space-between;align-items:flex-start;background:#fbfbf8;border-bottom:1px solid var(--line)}
+    .product-title{min-width:0;flex:1}
+    .product-title input{width:100%;border:0;background:transparent;font-weight:900;font-size:18px;color:var(--text);padding:0;outline:none}
+    .product-sub{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+    .mini-input{width:118px;border:1px solid var(--line);border-radius:9px;padding:7px 9px;background:#fff}
+    .score-chip{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:11px;background:var(--accent-2);color:var(--accent);font-weight:900;white-space:nowrap}
+    .product-actions{display:flex;gap:6px}
+    .criteria{padding:6px 14px 14px}
+    .criterion{display:grid;grid-template-columns:minmax(132px,.9fr) minmax(190px,1.5fr) 58px;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px dashed #eceae4}
+    .criterion:last-child{border-bottom:0}
+    .criterion-label{font-size:13px;font-weight:800}
+    .criterion-label small{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:2px}
+    select{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:9px 10px;color:var(--text);outline:none}
+    select:focus,input:focus,textarea:focus{border-color:#a9b7ad;box-shadow:0 0 0 3px rgba(82,107,93,.10)}
+    .points{font-weight:900;text-align:right;font-variant-numeric:tabular-nums}
+    .points small{display:block;color:var(--muted);font-weight:600;font-size:10px}
+    .notes{padding:0 16px 16px}
+    .notes textarea{width:100%;min-height:60px;resize:vertical;border:1px solid var(--line);border-radius:11px;padding:10px;background:#fcfcfa}
+    .alerts{display:grid;gap:7px;padding:0 16px 16px}
+    .alert{font-size:12px;border-radius:10px;padding:8px 10px;font-weight:650}
+    .alert.danger{background:var(--danger-bg);color:var(--danger)}
+    .alert.warn{background:var(--warn-bg);color:var(--warn)}
+    .compare-scroll{overflow:auto;padding:0 18px 18px}
+    .compare-table{width:100%;border-collapse:separate;border-spacing:0;min-width:760px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .compare-table th,.compare-table td{padding:11px 12px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-align:center;font-size:13px;background:#fff}
+    .compare-table th:first-child,.compare-table td:first-child{text-align:left;position:sticky;left:0;z-index:1;background:#fafaf7;font-weight:800;min-width:150px}
+    .compare-table th{background:#f3f3ef;font-size:12px}
+    .compare-table tr:last-child td{border-bottom:0}
+    .compare-table th:last-child,.compare-table td:last-child{border-right:0}
+    .bar-wrap{height:7px;background:#ecece6;border-radius:99px;overflow:hidden;margin-top:5px}
+    .bar{height:100%;background:var(--accent);border-radius:99px}
+    .rules{padding:0 22px 22px}
+    details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 14px}
+    details+details{margin-top:10px}
+    summary{padding:13px 0;font-weight:850;cursor:pointer}
+    .rules table{width:100%;border-collapse:collapse;margin:2px 0 14px}
+    .rules th,.rules td{padding:8px;border-bottom:1px solid var(--line);text-align:left;font-size:12px;vertical-align:top}
+    .rules th{color:var(--muted);font-weight:800}
+    .standard-note{margin-top:12px;padding:13px 14px;border-radius:12px;background:#f3f6f3;color:#445149;font-size:12px}
+    .empty{padding:26px;color:var(--muted);text-align:center;border:1px dashed var(--line);border-radius:14px}
+    .footer{color:var(--muted);font-size:11px;margin-top:18px;text-align:center}
+    .toast{position:fixed;right:18px;bottom:18px;background:#222;color:#fff;padding:10px 13px;border-radius:11px;font-size:12px;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:20}
+    .toast.show{opacity:1;transform:translateY(0)}
+    .modal{position:fixed;inset:0;background:rgba(20,22,20,.32);display:none;align-items:center;justify-content:center;padding:18px;z-index:30}
+    .modal.show{display:flex}
+    .modal-card{width:min(680px,100%);max-height:84vh;overflow:auto;background:#fff;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.18);padding:20px}
+    .modal-card h3{margin:0 0 10px}
+    .modal-card textarea{width:100%;min-height:260px;border:1px solid var(--line);border-radius:12px;padding:12px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px}
+    .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+    @media (max-width:1050px){
+      .ranking{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .editor-list{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      .shell{padding:12px 12px 52px}
+      .hero{padding:20px;border-radius:20px;display:block}
+      .hero-actions{justify-content:flex-start;min-width:0;margin-top:18px}
+      .hero-actions .btn{flex:1 1 calc(50% - 6px)}
+      .panel-head{padding:17px 16px 12px;align-items:flex-start}
+      .summary-wrap{padding:0 14px 14px}
+      .ranking{grid-template-columns:1fr 1fr;gap:8px}
+      .rank-card{padding:12px}
+      .score-big{font-size:30px}
+      .editor-list{padding:0 10px 10px;gap:10px}
+      .product-top{padding:13px 12px 10px;flex-wrap:wrap}
+      .product-actions{width:100%;justify-content:flex-end}
+      .criteria{padding:4px 10px 10px}
+      .criterion{grid-template-columns:1fr 50px;gap:5px 8px;padding:10px 1px}
+      .criterion-label{grid-column:1 / 2}
+      .criterion select{grid-column:1 / 2}
+      .points{grid-column:2 / 3;grid-row:1 / 3;align-self:center}
+      .notes,.alerts{padding-left:12px;padding-right:12px}
+      .compare-scroll{padding:0 10px 10px}
+      .rules{padding:0 14px 14px}
+      .mini-input{width:106px}
+    }
+    @media (max-width:430px){
+      .ranking{grid-template-columns:1fr}
+      .hero-actions .btn{flex-basis:100%}
+      .product-sub{align-items:stretch}
+      .mini-input{width:100%}
+      .score-chip{margin-left:auto}
+    }
+    @media print{
+      .hero-actions,.product-actions,.modal,.toast{display:none!important}
+      body{background:white}
+      .shell{max-width:none;padding:0}
+      .panel,.hero{box-shadow:none;break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Baby Stroller Scorecard</div>
+        <h1>婴儿车选购评分器</h1>
+        <p>按 13 项共 100 分自动评分，兼顾新生儿适用、安全标准、车重、避震、收车和舒适度。支持多产品横向比较，数据只保存在当前浏览器。</p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn primary" id="addProductBtn">＋ 添加产品</button>
+        <button class="btn" id="exportBtn">导出数据</button>
+        <button class="btn" id="importBtn">导入数据</button>
+        <button class="btn ghost" id="resetBtn">重置</button>
+      </div>
+    </section>
+
+    <section class="panel grid">
+      <div class="panel-head">
+        <div><h2>综合排名</h2><p>总分相同时优先比较：执行标准 / CCC → 新生儿适用 → 安全配置。</p></div>
+      </div>
+      <div class="summary-wrap"><div class="ranking" id="ranking"></div></div>
+    </section>
+
+    <section class="panel grid">
+      <div class="panel-head">
+        <div><h2>产品评分</h2><p>每项直接选择最符合商品参数的描述，系统自动换算分数。</p></div>
+      </div>
+      <div class="editor-list" id="editorList"></div>
+    </section>
+
+    <section class="panel grid" id="compareSection">
+      <div class="panel-head">
+        <div><h2>多产品横向对比</h2><p>手机端可左右滑动。每个分项同时显示得分与满分。</p></div>
+      </div>
+      <div class="compare-scroll" id="compareWrap"></div>
+    </section>
+
+    <section class="panel grid">
+      <div class="panel-head">
+        <div><h2>评分规则与执行标准说明</h2><p>用于选购筛查，不替代产品说明书、认证证书或专业检测报告。</p></div>
+      </div>
+      <div class="rules" id="rules"></div>
+    </section>
+
+    <div class="footer">版本：2026-08-25 · 单文件网页 · PC / 移动端响应式 · 本地保存</div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <div class="modal" id="dataModal" aria-hidden="true">
+    <div class="modal-card">
+      <h3 id="modalTitle">导出数据</h3>
+      <p id="modalDesc" style="color:var(--muted);font-size:12px;margin-top:0"></p>
+      <textarea id="dataText"></textarea>
+      <div class="modal-actions">
+        <button class="btn" id="modalClose">关闭</button>
+        <button class="btn primary" id="modalAction">复制</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+const criteria = [
+  {
+    key:'newborn', name:'新生儿适用性', max:18, hint:'第一辆车优先看这项',
+    options:[
+      [18,'官方明确 0月+；可近乎平躺或独立睡篮'],
+      [14,'官方 0月+；但躺姿 / 支撑一般'],
+      [10,'需搭配额外睡篮 / 提篮才适合新生儿'],
+      [6,'官方仅建议约 6个月+ 使用'],
+      [0,'适用月龄不明确']
+    ]
+  },
+  {
+    key:'standard', name:'执行标准 / CCC', max:8, hint:'独立安全评分项',
+    options:[
+      [8,'CCC 可查 + 当前适用国标明确 + 有新版标准检测 / 转换依据'],
+      [7,'CCC 可查 + 明确执行 GB 14748-2006（当前有效）'],
+      [5,'CCC 可查，但商品页未明确执行标准'],
+      [3,'写明 GB 14748-2006，但 CCC 信息暂无法确认'],
+      [2,'仅宣传 EN 1888 / ASTM 等国外标准，国内 CCC 信息不明确'],
+      [1,'仅见企业标准或信息含糊，未见童车国标 / CCC'],
+      [0,'无执行标准 / 无认证信息 / 来源不明']
+    ]
+  },
+  {
+    key:'safety', name:'安全配置', max:12, hint:'安全带、刹车、锁定结构',
+    options:[
+      [12,'五点式安全带 + 一脚双刹 + 可靠车架锁定 + 防误折叠'],
+      [10,'五点式安全带 + 双刹 + 可靠锁定'],
+      [8,'五点式安全带 + 可靠刹车，结构信息较完整'],
+      [5,'有基础安全带和刹车，但细节一般'],
+      [2,'安全配置描述很少'],
+      [0,'关键安全配置缺失或不明确']
+    ]
+  },
+  {
+    key:'weight', name:'车重', max:12, hint:'轻便与稳定的平衡',
+    options:[
+      [12,'≤ 6.5 kg'],[11,'6.6–8.0 kg'],[9,'8.1–9.0 kg'],[7,'9.1–11.0 kg'],[4,'11.1–13.0 kg'],[2,'＞ 13 kg'],[0,'未提供车重']
+    ]
+  },
+  {
+    key:'suspension', name:'避震能力', max:12, hint:'轮径 + 悬挂结构一起看',
+    options:[
+      [12,'中大轮 / 大轮 + 四轮有效避震，过坎能力强'],
+      [10,'中等轮径 + 四轮避震，城市路况表现好'],
+      [7,'后轮避震或前后部分避震'],
+      [4,'小轮 + 简单避震，偏旅行 / 商场使用'],
+      [2,'基本无明显避震结构'],
+      [0,'信息不明确']
+    ]
+  },
+  {
+    key:'fold', name:'收车便利性', max:10, hint:'抱娃时能否单手操作',
+    options:[
+      [10,'单手一键收车 + 收车后可站立'],[8,'一键 / 单手收车'],[6,'两步左右可完成收车'],[3,'收车步骤较多或需双手操作'],[0,'信息不明确']
+    ]
+  },
+  {
+    key:'foldSize', name:'折叠体积', max:8, hint:'建议对照后备箱实测',
+    options:[
+      [8,'旅行车级，非常紧凑 / 易携带'],[7,'普通轿车后备箱可轻松放入'],[4,'较占空间，但可接受'],[2,'折叠后体积仍很大'],[0,'未提供折叠尺寸']
+    ]
+  },
+  {
+    key:'reversible', name:'双向功能', max:6, hint:'新生儿阶段更实用',
+    options:[
+      [6,'座椅可真正双向安装 / 换向'],[4,'睡篮 / 提篮阶段可面对父母'],[2,'仅正向，但观察窗较完善'],[0,'仅正向且无明显补偿设计']
+    ]
+  },
+  {
+    key:'seat', name:'座舱舒适性', max:6, hint:'座宽、靠背、脚踏、透气',
+    options:[
+      [6,'靠背高 + 座宽足 + 脚踏可调 + 透气'],[5,'以上满足 3 项'],[3,'空间 / 支撑中等'],[1,'偏窄或支撑明显一般'],[0,'信息不明确']
+    ]
+  },
+  {
+    key:'canopy', name:'遮阳篷', max:4, hint:'UPF50+ / 延长篷 / 透气窗',
+    options:[
+      [4,'UPF50+ 大篷 + 可延长 + 透气 / 观察窗'],[3,'UPF50+ 大遮阳篷'],[2,'普通遮阳篷'],[0,'遮阳能力弱或信息不明']
+    ]
+  },
+  {
+    key:'handling', name:'轮子与操控', max:2, hint:'转向、锁定、过坎',
+    options:[[2,'转向顺滑 + 万向轮可锁 + 过坎轻松'],[1,'操控一般'],[0,'明显难推 / 信息不明']]
+  },
+  {
+    key:'storage', name:'储物能力', max:1, hint:'置物篮是否好拿',
+    options:[[1,'置物篮容量够用且拿取方便'],[0,'较小 / 不方便 / 信息不明']]
+  },
+  {
+    key:'service', name:'做工 / 售后', max:1, hint:'品牌、配件与维修',
+    options:[[1,'做工稳定，售后和配件体系较完善'],[0,'一般或信息不明']]
+  }
+];
+
+const STORAGE_KEY='stroller-scorer-v2';
+let products=[];
+
+function defaults(name='待评分婴儿车'){
+  const scores={}; criteria.forEach(c=>scores[c.key]=0);
+  return {id:cryptoId(),name,price:'',notes:'',scores};
+}
+function cryptoId(){return 'p_'+Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4)}
+function load(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(raw){products=JSON.parse(raw); migrate();}
+    else products=[defaults('产品 A'),defaults('产品 B')];
+  }catch(e){products=[defaults('产品 A'),defaults('产品 B')]}
+}
+function migrate(){
+  if(!Array.isArray(products)||!products.length){products=[defaults('产品 A'),defaults('产品 B')];return}
+  products=products.map((p,i)=>{
+    const d=defaults(p.name||`产品 ${i+1}`);
+    d.id=p.id||cryptoId(); d.price=p.price??''; d.notes=p.notes??'';
+    criteria.forEach(c=>{
+      const v=Number(p.scores?.[c.key]);
+      d.scores[c.key]=Number.isFinite(v)?v:0;
+    });
+    return d;
+  });
+}
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(products))}
+function total(p){return criteria.reduce((s,c)=>s+(Number(p.scores[c.key])||0),0)}
+function tier(score){
+  if(score>=90)return ['非常优秀','good'];
+  if(score>=85)return ['很推荐','good'];
+  if(score>=80)return ['值得买','good'];
+  if(score>=75)return ['有取舍','warn'];
+  if(score>=70)return ['谨慎考虑','warn'];
+  return ['不太推荐','danger'];
+}
+function typeOf(p){
+  const w=p.scores.weight||0, s=p.scores.suspension||0, f=p.scores.fold||0, fs=p.scores.foldSize||0;
+  if(w>=11 && f>=8 && fs>=7 && s<=7) return '轻便型';
+  if(s>=10 && w<=7) return '舒适型';
+  if(s>=10 && w>=9) return '均衡舒适型';
+  if(w>=9 && s>=7 && f>=6) return '均衡型';
+  return '取舍型';
+}
+function alertsFor(p){
+  const a=[];
+  if((p.scores.standard||0)<=2)a.push(['danger','执行标准 / CCC 信息不足，建议先核实后再购买。']);
+  else if((p.scores.standard||0)<=5)a.push(['warn','执行标准或 CCC 信息还不完整，建议向客服索要认证信息。']);
+  if((p.scores.newborn||0)<=6)a.push(['danger','不适合作为新生儿直接使用的第一辆车，除非宝宝月龄已经满足说明书要求。']);
+  else if((p.scores.newborn||0)<=10)a.push(['warn','新生儿使用可能依赖额外睡篮 / 提篮，请确认组合方式和适用月龄。']);
+  if((p.scores.safety||0)<=5)a.push(['danger','关键安全配置得分偏低，建议优先换款。']);
+  if((p.scores.weight||0)<=4)a.push(['warn','车身偏重，频繁搬运、上下楼或放后备箱时体验可能较差。']);
+  return a;
+}
+function esc(s){return String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
+function selectHtml(c,p){
+  return `<select data-action="score" data-id="${p.id}" data-key="${c.key}">${c.options.map(([v,label])=>`<option value="${v}" ${Number(p.scores[c.key])===v?'selected':''}>${v}分 · ${esc(label)}</option>`).join('')}</select>`
+}
+function renderEditors(){
+  const host=document.getElementById('editorList');
+  if(!products.length){host.innerHTML='<div class="empty">还没有产品，点击“添加产品”开始评分。</div>';return}
+  host.innerHTML=products.map(p=>{
+    const score=total(p), [label,cls]=tier(score), alerts=alertsFor(p);
+    return `<article class="product" data-product="${p.id}">
+      <div class="product-top">
+        <div class="product-title">
+          <input aria-label="产品名称" data-action="name" data-id="${p.id}" value="${esc(p.name)}" />
+          <div class="product-sub">
+            <input class="mini-input" inputmode="decimal" placeholder="价格 ¥（可选）" aria-label="价格" data-action="price" data-id="${p.id}" value="${esc(p.price)}" />
+            <span class="pill">${typeOf(p)}</span><span class="pill ${cls}">${label}</span>
+          </div>
+        </div>
+        <div>
+          <div class="score-chip"><span>${score}</span><small>/100</small></div>
+        </div>
+        <div class="product-actions">
+          <button class="btn small" data-action="duplicate" data-id="${p.id}">复制</button>
+          <button class="btn small danger" data-action="remove" data-id="${p.id}">删除</button>
+        </div>
+      </div>
+      <div class="criteria">
+        ${criteria.map(c=>`<div class="criterion">
+          <div class="criterion-label">${c.name}<small>${c.hint}</small></div>
+          ${selectHtml(c,p)}
+          <div class="points">${p.scores[c.key]}<small>/ ${c.max}</small></div>
+        </div>`).join('')}
+      </div>
+      ${alerts.length?`<div class="alerts">${alerts.map(([cls,t])=>`<div class="alert ${cls}">${esc(t)}</div>`).join('')}</div>`:''}
+      <div class="notes"><textarea placeholder="备注：型号、链接、轮径、折叠尺寸、你的实际试推感受……" data-action="notes" data-id="${p.id}">${esc(p.notes)}</textarea></div>
+    </article>`
+  }).join('');
+}
+function renderRanking(){
+  const host=document.getElementById('ranking');
+  if(!products.length){host.innerHTML='<div class="empty">暂无产品</div>';return}
+  const sorted=[...products].sort((a,b)=>total(b)-total(a)||(b.scores.standard-a.scores.standard)||(b.scores.newborn-a.scores.newborn)||(b.scores.safety-a.scores.safety));
+  host.innerHTML=sorted.map((p,i)=>{
+    const score=total(p),[label,cls]=tier(score),price=Number(String(p.price).replace(/[^0-9.]/g,''));
+    const value=price?`¥${Math.round(price/Math.max(score,1))}/分`:'';
+    return `<div class="rank-card ${i===0?'first':''}">
+      <div class="rank-badge">NO.${i+1}</div>
+      <div class="rank-name" title="${esc(p.name)}">${esc(p.name||'未命名产品')}</div>
+      <div class="score-line"><div class="score-big">${score}</div><div class="score-max">/100</div></div>
+      <div class="rank-meta"><span class="pill ${cls}">${label}</span><span class="pill">${typeOf(p)}</span>${price?`<span class="pill">¥${price.toLocaleString('zh-CN')}</span>`:''}${value?`<span class="pill">${value}</span>`:''}</div>
+    </div>`
+  }).join('');
+}
+function renderCompare(){
+  const host=document.getElementById('compareWrap');
+  if(!products.length){host.innerHTML='<div class="empty">暂无可比较产品</div>';return}
+  const sorted=[...products].sort((a,b)=>total(b)-total(a));
+  const header=`<tr><th>对比项目</th>${sorted.map(p=>`<th>${esc(p.name||'未命名')}<br><strong style="font-size:18px">${total(p)}</strong>/100</th>`).join('')}</tr>`;
+  const priceRow=`<tr><td>价格</td>${sorted.map(p=>`<td>${p.price?`¥ ${esc(p.price)}`:'—'}</td>`).join('')}</tr>`;
+  const typeRow=`<tr><td>类型判断</td>${sorted.map(p=>`<td>${typeOf(p)}</td>`).join('')}</tr>`;
+  const tierRow=`<tr><td>综合评价</td>${sorted.map(p=>`<td>${tier(total(p))[0]}</td>`).join('')}</tr>`;
+  const rows=criteria.map(c=>`<tr><td>${c.name}<div class="bar-wrap"><div class="bar" style="width:100%"></div></div></td>${sorted.map(p=>{
+    const v=Number(p.scores[c.key])||0; return `<td><strong>${v}</strong> / ${c.max}<div class="bar-wrap"><div class="bar" style="width:${Math.round(v/c.max*100)}%"></div></div></td>`
+  }).join('')}</tr>`).join('');
+  host.innerHTML=`<table class="compare-table"><thead>${header}</thead><tbody>${priceRow}${typeRow}${tierRow}${rows}</tbody></table>`;
+}
+function renderRules(){
+  const host=document.getElementById('rules');
+  host.innerHTML=`
+    <details open>
+      <summary>100 分权重</summary>
+      <table><thead><tr><th>项目</th><th>满分</th><th>核心判断</th></tr></thead><tbody>
+      ${criteria.map(c=>`<tr><td>${c.name}</td><td><strong>${c.max}</strong></td><td>${c.hint}</td></tr>`).join('')}
+      </tbody></table>
+    </details>
+    <details>
+      <summary>执行标准 / CCC：8 分具体规则</summary>
+      <table><thead><tr><th>分数</th><th>条件</th></tr></thead><tbody>
+      ${criteria.find(c=>c.key==='standard').options.map(([v,t])=>`<tr><td><strong>${v} 分</strong></td><td>${t}</td></tr>`).join('')}
+      </tbody></table>
+      <div class="standard-note">
+        截至 2026-08-25：GB 14748-2006《儿童推车安全要求》仍为现行标准；GB/T 14748-2025《儿童呵护用品安全 儿童推车》与 GB 46516-2025《儿童呵护用品 通用安全要求》将于 2026-11-01 实施。童车属于 CCC 管理范围；2026-11-01 起童车类 CCC 认证活动按新版实施规则执行，既有有效证书按规定自然过渡。购买时应以产品实际适用标准、CCC 证书及官方说明为准。
+      </div>
+    </details>
+    <details>
+      <summary>分数解释</summary>
+      <table><tbody>
+        <tr><td><strong>90–100</strong></td><td>非常优秀，可以重点买</td></tr>
+        <tr><td><strong>85–89</strong></td><td>很推荐，基本没有明显短板</td></tr>
+        <tr><td><strong>80–84</strong></td><td>值得买，重点看价格是否合适</td></tr>
+        <tr><td><strong>75–79</strong></td><td>可以买，但存在明确取舍</td></tr>
+        <tr><td><strong>70–74</strong></td><td>谨慎考虑，除非价格 / 场景特别匹配</td></tr>
+        <tr><td><strong>＜70</strong></td><td>通常不推荐作为主力婴儿车</td></tr>
+      </tbody></table>
+    </details>`;
+}
+function render(){renderRanking();renderEditors();renderCompare();renderRules();save()}
+function productById(id){return products.find(p=>p.id===id)}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),1800)}
+
+document.addEventListener('change',e=>{
+  const t=e.target, action=t.dataset.action, id=t.dataset.id; if(!action||!id)return;
+  const p=productById(id); if(!p)return;
+  if(action==='score'){p.scores[t.dataset.key]=Number(t.value);render();}
+  if(action==='price'){p.price=t.value;save();renderRanking();renderCompare();}
+});
+document.addEventListener('input',e=>{
+  const t=e.target, action=t.dataset.action, id=t.dataset.id; if(!action||!id)return;
+  const p=productById(id); if(!p)return;
+  if(action==='name'){p.name=t.value;save();renderRanking();renderCompare();}
+  if(action==='price'){p.price=t.value;save();}
+  if(action==='notes'){p.notes=t.value;save();}
+});
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button[data-action]'); if(!b)return;
+  const action=b.dataset.action,id=b.dataset.id,p=productById(id); if(!p)return;
+  if(action==='remove'){
+    if(products.length===1){toast('至少保留 1 个产品');return}
+    products=products.filter(x=>x.id!==id);render();toast('已删除');
+  }
+  if(action==='duplicate'){
+    const copy=JSON.parse(JSON.stringify(p));copy.id=cryptoId();copy.name=(p.name||'产品')+' 副本';products.push(copy);render();toast('已复制');
+  }
+});
+
+document.getElementById('addProductBtn').addEventListener('click',()=>{
+  products.push(defaults(`产品 ${String.fromCharCode(65+Math.min(products.length,25))}`));render();
+  setTimeout(()=>document.querySelector(`[data-product="${products[products.length-1].id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'}),50);
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  if(confirm('确定清空当前评分并恢复为两个空白产品吗？')){products=[defaults('产品 A'),defaults('产品 B')];render();toast('已重置')}
+});
+
+const modal=document.getElementById('dataModal'),text=document.getElementById('dataText'),title=document.getElementById('modalTitle'),desc=document.getElementById('modalDesc'),action=document.getElementById('modalAction');
+let modalMode='export';
+function openModal(mode){
+  modalMode=mode;modal.classList.add('show');modal.setAttribute('aria-hidden','false');
+  if(mode==='export'){
+    title.textContent='导出评分数据';desc.textContent='复制下面的 JSON，可在另一台设备或以后再次导入。';text.value=JSON.stringify({version:2,exportedAt:new Date().toISOString(),products},null,2);text.readOnly=true;action.textContent='复制';
+  }else{
+    title.textContent='导入评分数据';desc.textContent='粘贴由本网页导出的 JSON。导入会覆盖当前产品。';text.value='';text.readOnly=false;action.textContent='导入';
+  }
+}
+function closeModal(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true')}
+document.getElementById('exportBtn').addEventListener('click',()=>openModal('export'));
+document.getElementById('importBtn').addEventListener('click',()=>openModal('import'));
+document.getElementById('modalClose').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+action.addEventListener('click',async()=>{
+  if(modalMode==='export'){
+    try{await navigator.clipboard.writeText(text.value);toast('已复制到剪贴板')}catch(e){text.select();document.execCommand('copy');toast('已复制')}
+  }else{
+    try{
+      const parsed=JSON.parse(text.value); const incoming=Array.isArray(parsed)?parsed:parsed.products;
+      if(!Array.isArray(incoming)||!incoming.length)throw new Error('格式错误');
+      products=incoming;migrate();render();closeModal();toast('导入成功');
+    }catch(e){toast('导入失败：请检查 JSON 格式')}
+  }
+});
+
+load();render();
+</script>
+</body>
+</html>
